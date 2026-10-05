@@ -1,0 +1,1324 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Guía de Japón 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@500;600&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap">
+<style>
+/* Layout: una columna de guía de bolsillo. El viaje es una línea de tren; cada día es un cartel de estación con el color de la ciudad donde dormimos. */
+:root {
+  --bg: #F1F3F4;
+  --surface: #FFFFFF;
+  --sign: #FFFFFF;
+  --ink: #16191D;
+  --muted: #59626C;
+  --rule: #D4D9DE;
+  --soft: #E8EBEE;
+  --accent: #B4362B;
+  --osaka: #B0520D;
+  --kyoto: #7A2F7B;
+  --hakone: #22654A;
+  --tokyo: #24508F;
+  --osaka-ink: #A24B0B;
+  --kyoto-ink: #7A2F7B;
+  --hakone-ink: #22654A;
+  --tokyo-ink: #24508F;
+  --on-band: #FFFFFF;
+  --ok: #1D6E46;
+  --ok-bg: #E2F1E8;
+  --no: #A8251D;
+  --no-bg: #F7E2DF;
+  --f-display: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", "Yu Gothic", system-ui, sans-serif;
+  --f-body: "Atkinson Hyperlegible", "Segoe UI", Roboto, system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --s-1: 0.8125rem;
+  --s-0: 1.0625rem;
+  --s1: 1.25rem;
+  --s2: 1.5625rem;
+  --s3: 2rem;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121417;
+    --surface: #1A1D21;
+    --sign: #1E2227;
+    --ink: #E9ECEF;
+    --muted: #9CA5AF;
+    --rule: #30363D;
+    --soft: #24282E;
+    --accent: #EE7461;
+    --osaka-ink: #F2A160;
+    --kyoto-ink: #D597D6;
+    --hakone-ink: #6CC79A;
+    --tokyo-ink: #93B3EC;
+    --ok: #74CFA0;
+    --ok-bg: #1C3328;
+    --no: #F28B82;
+    --no-bg: #3B2321;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121417;
+  --surface: #1A1D21;
+  --sign: #1E2227;
+  --ink: #E9ECEF;
+  --muted: #9CA5AF;
+  --rule: #30363D;
+  --soft: #24282E;
+  --accent: #EE7461;
+  --osaka-ink: #F2A160;
+  --kyoto-ink: #D597D6;
+  --hakone-ink: #6CC79A;
+  --tokyo-ink: #93B3EC;
+  --ok: #74CFA0;
+  --ok-bg: #1C3328;
+  --no: #F28B82;
+  --no-bg: #3B2321;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 64px); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: var(--s-0);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { font-family: var(--f-display); text-wrap: balance; margin: 0; line-height: 1.2; }
+p { margin: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-inline: 16px;
+  padding-block: 0 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+/* Barra superior */
+.top {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 20;
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--rule);
+}
+.top-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.brand { font-family: var(--f-display); font-weight: 900; font-size: var(--s-0); display: flex; align-items: baseline; gap: 8px; white-space: nowrap; }
+.brand .hinomaru { width: 12px; height: 12px; border-radius: 50%; background: var(--accent); display: inline-block; align-self: center; }
+.nav { display: flex; gap: 4px; }
+.nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: var(--s-1);
+  padding: 8px 10px;
+  border-radius: 999px;
+}
+.nav a:hover { background: var(--soft); }
+
+/* Portada */
+.hero { padding-top: 36px; display: flex; flex-direction: column; gap: 20px; }
+.eyebrow {
+  font-family: var(--f-mono);
+  font-size: var(--s-1);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+.eyebrow [lang="ja"] { font-family: var(--f-display); letter-spacing: 0.15em; color: var(--accent); font-weight: 700; }
+.hero h1 {
+  font-size: clamp(2.75rem, 12vw, 4.75rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+}
+.hero h1 .yr { color: var(--accent); }
+.hero .lede { font-size: var(--s1); max-width: 36ch; color: var(--ink); }
+.status {
+  align-self: flex-start;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-family: var(--f-mono);
+  font-size: var(--s-1);
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+}
+.status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+
+.flights { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; }
+.flights li {
+  background: var(--surface);
+  border: 1.5px dashed var(--rule);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.f-dir { font-family: var(--f-mono); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.f-route { font-family: var(--f-mono); font-weight: 600; font-variant-numeric: tabular-nums; }
+.f-date { font-size: var(--s-1); color: var(--muted); }
+
+.stays { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 0; padding: 0; list-style: none; }
+.stay {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border-top: 6px solid var(--c);
+  padding: 12px 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.stay .k { font-family: var(--f-display); font-weight: 900; font-size: var(--s2); color: var(--c-ink); line-height: 1.1; }
+.stay .name { font-weight: 700; }
+.stay .meta { font-size: var(--s-1); color: var(--muted); }
+.stay .nights { font-family: var(--f-mono); font-size: var(--s-1); font-weight: 600; color: var(--c-ink); margin-top: 4px; }
+@media (max-width: 600px) { .stays { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Cabeceras de sección */
+.sec-head { display: flex; flex-direction: column; gap: 6px; }
+.sec-head h2 { font-size: var(--s3); font-weight: 900; }
+.sec-head p { color: var(--muted); max-width: 60ch; }
+
+/* Línea de días */
+.strip {
+  position: relative;
+  overflow-x: auto;
+  margin-inline: -16px;
+  padding: 4px 16px 10px;
+  scrollbar-width: thin;
+}
+.stations { display: flex; list-style: none; margin: 0; padding: 0; min-width: max-content; }
+.st { position: relative; width: 70px; }
+.st::before {
+  content: "";
+  position: absolute;
+  top: 17px;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--c);
+}
+.st:first-child::before { left: 50%; }
+.st:last-child::before { right: 50%; }
+.st button {
+  position: relative;
+  width: 100%;
+  background: none;
+  border: 0;
+  padding: 6px 2px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.st-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--sign);
+  border: 4px solid var(--c);
+  transition: transform 0.15s ease;
+}
+.st-n { font-family: var(--f-mono); font-weight: 600; font-size: var(--s-0); line-height: 1.2; margin-top: 4px; }
+.st-date { font-size: 0.75rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.st-place { font-size: 0.75rem; font-weight: 700; color: var(--c); text-align: center; line-height: 1.2; max-width: 66px; }
+.st button[aria-current="true"] .st-dot { background: var(--c); transform: scale(1.25); }
+.st button[aria-current="true"] .st-n { color: var(--c); }
+.st button:hover .st-dot { transform: scale(1.15); }
+.today-tag {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--f-mono);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  background: var(--accent);
+  color: var(--surface);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+.hint { font-size: var(--s-1); color: var(--muted); }
+
+/* Ficha del día */
+.day { display: flex; flex-direction: column; gap: 22px; }
+
+.sign {
+  background: var(--sign);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.sign-top {
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr) 60px;
+  gap: 10px;
+  align-items: start;
+  padding: 18px 16px 16px;
+}
+.code {
+  border: 3px solid var(--line);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4px 0 2px;
+  font-family: var(--f-mono);
+  line-height: 1.1;
+  background: var(--sign);
+}
+.code span { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; color: var(--line-ink); }
+.code b { font-size: 1.375rem; font-weight: 600; }
+.sign-name { text-align: center; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.kanji {
+  font-family: var(--f-display);
+  font-weight: 900;
+  font-size: clamp(2.1rem, 9.5vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+  overflow-wrap: anywhere;
+}
+.romaji {
+  font-family: var(--f-mono);
+  font-weight: 600;
+  font-size: var(--s-1);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.day-title { font-size: var(--s1); font-weight: 700; margin-top: 8px; color: var(--ink); }
+.cal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 4px 0;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+.cal span { font-family: var(--f-mono); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.cal b { font-family: var(--f-display); font-size: 1.5rem; font-weight: 900; }
+.sign-band {
+  background: var(--line);
+  color: var(--on-band);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.sign-band button {
+  background: none;
+  border: 0;
+  color: var(--on-band);
+  padding: 10px 14px;
+  font-weight: 700;
+  font-size: var(--s-1);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  min-height: 44px;
+}
+.sign-band button:disabled { opacity: 0; pointer-events: none; }
+.sign-band .next { justify-content: flex-end; text-align: right; }
+.sign-band button:focus-visible { outline-color: var(--on-band); outline-offset: -4px; }
+.sign-band button:hover span { text-decoration: underline; text-underline-offset: 3px; }
+
+.idea { font-size: var(--s1); line-height: 1.45; }
+.badges { display: flex; flex-wrap: wrap; gap: 8px; }
+.badge {
+  font-size: var(--s-1);
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1.5px solid var(--line-ink);
+  color: var(--line-ink);
+}
+
+/* Billete con la logística */
+.ticket {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px 20px;
+  padding: 16px 18px;
+  border-radius: var(--radius);
+  background:
+    repeating-linear-gradient(135deg, color-mix(in srgb, var(--line) 5%, transparent) 0 2px, transparent 2px 9px),
+    color-mix(in srgb, var(--line) 8%, var(--surface));
+  border: 1.5px dashed color-mix(in srgb, var(--line-ink) 45%, transparent);
+}
+.ticket div { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.ticket dt {
+  font-family: var(--f-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--line-ink);
+}
+.ticket dd { margin: 0; font-weight: 700; line-height: 1.4; }
+
+/* Línea del día */
+.timeline { list-style: none; margin: 0; padding: 0; position: relative; display: flex; flex-direction: column; gap: 22px; }
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 19px;
+  top: 20px;
+  bottom: 20px;
+  width: 3px;
+  background: color-mix(in srgb, var(--line-ink) 35%, transparent);
+  border-radius: 2px;
+}
+.tl { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 14px; position: relative; }
+.tl-ico {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2.5px solid var(--line-ink);
+  color: var(--line-ink);
+  display: grid;
+  place-items: center;
+}
+.tl-ico svg { width: 22px; height: 22px; }
+.tl.alt .tl-ico { border-style: dashed; }
+.tl-body { display: flex; flex-direction: column; gap: 8px; padding-top: 7px; min-width: 0; }
+.tl-label {
+  font-family: var(--f-mono);
+  font-size: var(--s-1);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--line-ink);
+}
+.tl-label .place { font-family: var(--f-body); letter-spacing: 0; text-transform: none; color: var(--ink); font-weight: 700; font-size: var(--s-0); margin-left: 6px; }
+.tl-body p { max-width: 62ch; }
+.tl-body p + p { padding-top: 8px; border-top: 1px solid var(--soft); }
+
+.tips {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.tips h4 {
+  font-family: var(--f-mono);
+  font-size: var(--s-1);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.tips ul { margin: 0; padding-left: 1.1em; display: flex; flex-direction: column; gap: 6px; }
+
+.day-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.day-nav button {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  min-height: 56px;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.day-nav button.next { text-align: right; align-items: flex-end; }
+.day-nav button:hover { border-color: var(--ink); }
+.day-nav button:disabled { visibility: hidden; }
+.day-nav small { font-family: var(--f-mono); font-size: 0.6875rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.day-nav span { font-weight: 700; }
+
+/* Antes de salir */
+.check-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+.check-group { background: var(--surface); border-radius: var(--radius); padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.check-group h3 { font-size: var(--s-0); font-weight: 700; }
+.check-group ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.check { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 10px; align-items: start; cursor: pointer; }
+.check input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  margin: 2px 0 0;
+  border: 2px solid var(--muted);
+  border-radius: 6px;
+  background: var(--surface);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.check input::after { content: ""; width: 6px; height: 11px; border: solid var(--surface); border-width: 0 3px 3px 0; transform: rotate(45deg) translate(-1px, -1px); opacity: 0; }
+.check input:checked { background: var(--ok); border-color: var(--ok); }
+.check input:checked::after { opacity: 1; }
+.check input:checked + span { color: var(--muted); text-decoration: line-through; text-decoration-thickness: 1.5px; }
+.note {
+  font-size: var(--s-1);
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+}
+.note b { color: var(--ink); }
+
+/* Info práctica */
+.block { display: flex; flex-direction: column; gap: 14px; }
+.block > h3 { font-size: var(--s1); font-weight: 700; }
+.passes { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.pass {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 4px 16px;
+  align-items: center;
+}
+.pass .p-name { font-weight: 700; }
+.pass .p-when { font-size: var(--s-1); color: var(--muted); }
+.pass .p-why { font-size: var(--s-1); grid-column: 1 / -1; }
+.pass .p-right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; grid-row: 1 / span 2; grid-column: 2; }
+.pass .p-price { font-family: var(--f-mono); font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.verdict { font-size: 0.75rem; font-weight: 700; padding: 2px 10px; border-radius: 999px; background: var(--soft); color: var(--ink); white-space: nowrap; }
+.verdict.yes { background: var(--ok-bg); color: var(--ok); }
+.verdict.no { background: var(--no-bg); color: var(--no); }
+
+.tipcols { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+.tipcol { background: var(--surface); border-radius: var(--radius); padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.tipcol h4 { font-size: var(--s-0); font-weight: 700; }
+.tipcol ul { margin: 0; padding-left: 1.1em; display: flex; flex-direction: column; gap: 8px; }
+
+.phrases { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+.phrase { background: var(--surface); border-radius: var(--radius); padding: 14px 16px; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.phrase .es { font-size: var(--s-1); color: var(--muted); }
+.phrase .jp { font-family: var(--f-display); font-weight: 700; font-size: var(--s1); overflow-wrap: anywhere; }
+.phrase .ro { font-family: var(--f-mono); font-size: var(--s-1); font-weight: 500; color: var(--accent); }
+
+.sos { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+.sos-card { background: var(--surface); border-radius: var(--radius); padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; border: 1.5px solid var(--rule); }
+.sos-card .what { font-weight: 700; }
+.sos-card .num { font-family: var(--f-mono); font-weight: 600; font-size: var(--s2); font-variant-numeric: tabular-nums; user-select: all; }
+.sos-card .sub { font-size: var(--s-1); color: var(--muted); }
+.copy {
+  align-self: flex-start;
+  background: var(--soft);
+  border: 0;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: var(--s-1);
+  font-weight: 700;
+  cursor: pointer;
+}
+.copy:hover { background: var(--rule); }
+
+.lodgings { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
+.lodging {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border-top: 6px solid var(--c);
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+.lodging .l-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.lodging .l-k { font-family: var(--f-display); font-weight: 900; font-size: var(--s1); color: var(--c-ink); }
+.lodging .l-city { font-weight: 700; }
+.lodging .l-dates { font-family: var(--f-mono); font-size: var(--s-1); font-weight: 600; color: var(--muted); margin-left: auto; }
+.lodging .l-name { font-weight: 700; line-height: 1.35; }
+.lodging .l-near { font-size: var(--s-1); color: var(--muted); }
+.addr {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: var(--s1);
+  line-height: 1.4;
+  background: var(--soft);
+  border-radius: 8px;
+  padding: 10px 12px;
+  overflow-wrap: anywhere;
+}
+.addr span { user-select: all; }
+.addr small { display: block; font-family: var(--f-body); font-weight: 400; font-size: var(--s-1); color: var(--muted); margin-top: 2px; }
+.l-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.l-actions a { font-size: var(--s-1); font-weight: 700; }
+
+.ship { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
+.ship li { background: var(--surface); border-radius: var(--radius); padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.ship .route { display: flex; align-items: center; gap: 10px; font-family: var(--f-display); font-weight: 900; font-size: var(--s1); }
+.ship .route i { font-style: normal; color: var(--muted); font-weight: 500; }
+.ship .route .a { color: var(--from); }
+.ship .route .b { color: var(--to); }
+.ship dl { margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.ship dl div { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 10px; }
+.ship dt { font-family: var(--f-mono); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); padding-top: 3px; }
+.ship dd { margin: 0; }
+.ship-notes { margin: 0; padding-left: 1.1em; display: flex; flex-direction: column; gap: 8px; }
+
+footer.foot { display: flex; flex-direction: column; gap: 14px; font-size: var(--s-1); color: var(--muted); border-top: 1px solid var(--rule); padding-top: 20px; }
+details summary { cursor: pointer; font-weight: 700; color: var(--ink); font-size: var(--s-0); }
+details ul { margin: 12px 0 0; padding-left: 1.1em; display: flex; flex-direction: column; gap: 6px; }
+
+@media (max-width: 420px) {
+  .sign-top { grid-template-columns: 50px minmax(0, 1fr) 50px; padding-inline: 12px; }
+  .code b { font-size: 1.125rem; }
+  .cal b { font-size: 1.25rem; }
+  .nav a { padding: 8px 7px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .st-dot { transition: none; }
+}
+</style>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="brand"><span class="hinomaru" aria-hidden="true"></span>Japón 2026</div>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#itinerario">Días</a>
+      <a href="#reservas">Reservas</a>
+      <a href="#info">Info</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" aria-labelledby="hero-title">
+    <p class="eyebrow"><span lang="ja">日本の秋</span><span>Guía para 6 amigos</span></p>
+    <h1 id="hero-title">Japón <span class="yr">2026</span></h1>
+    <p class="lede">Del 29 de octubre al 13 de noviembre, en tren de Osaka a Tokio en pleno otoño.</p>
+    <ul class="flights" aria-label="Vuelos">
+      <li><span class="f-dir">Ida</span><span class="f-route">Madrid 12:20 → Kansai 12:40</span><span class="f-date">Jue 29 oct → vie 30 oct</span></li>
+      <li><span class="f-dir">Vuelta</span><span class="f-route">Haneda 21:00 → Madrid 7:25</span><span class="f-date">Vie 13 nov → sáb 14 nov</span></li>
+    </ul>
+    <p class="status" id="status">29 oct – 13 nov</p>
+    <ul class="stays" aria-label="Dónde dormimos">
+      <li class="stay" style="--c: var(--osaka); --c-ink: var(--osaka-ink)"><span class="k" lang="ja">大阪</span><span class="name">Osaka</span><span class="meta">30 oct – 2 nov · Airbnb en Shinsekai</span><span class="nights">3 noches</span></li>
+      <li class="stay" style="--c: var(--kyoto); --c-ink: var(--kyoto-ink)"><span class="k" lang="ja">京都</span><span class="name">Kioto</span><span class="meta">2 – 5 nov · Casa de madera en Gojo</span><span class="nights">3 noches</span></li>
+      <li class="stay" style="--c: var(--hakone); --c-ink: var(--hakone-ink)"><span class="k" lang="ja">箱根</span><span class="name">Hakone</span><span class="meta">5 – 7 nov · Hakonenomori Okada</span><span class="nights">2 noches</span></li>
+      <li class="stay" style="--c: var(--tokyo); --c-ink: var(--tokyo-ink)"><span class="k" lang="ja">東京</span><span class="name">Tokio</span><span class="meta">7 – 13 nov · Airbnb en Sumida</span><span class="nights">6 noches</span></li>
+    </ul>
+    <p class="hint"><a href="#alojamientos">Direcciones en japonés para el taxi y estaciones cercanas</a></p>
+  </section>
+
+  <section id="itinerario" class="day-section" aria-labelledby="it-title" style="display:flex;flex-direction:column;gap:18px">
+    <div class="sec-head">
+      <p class="eyebrow"><span lang="ja">旅程</span><span>Itinerario</span></p>
+      <h2 id="it-title">Día a día</h2>
+    </div>
+    <div class="strip" id="strip-wrap">
+      <ol class="stations" id="stations" aria-label="Días del viaje"></ol>
+    </div>
+    <p class="hint">Toca una parada de la línea para ver ese día. Durante el viaje se abre sola en el día de hoy.</p>
+    <div class="day" id="day" aria-live="polite"></div>
+  </section>
+
+  <section id="reservas" aria-labelledby="res-title" style="display:flex;flex-direction:column;gap:18px">
+    <div class="sec-head">
+      <p class="eyebrow"><span lang="ja">準備</span><span>Antes de salir</span></p>
+      <h2 id="res-title">Reservas pendientes</h2>
+      <p>Noviembre es temporada alta: cerrad esto cuanto antes.</p>
+    </div>
+    <p class="note"><span>Las ventas abren a las <b>10:00 en Japón</b>, que son las <b>3:00 en España</b>.</span><span>Las marcas se guardan solo en este dispositivo.</span></p>
+    <div class="check-groups" id="checks"></div>
+  </section>
+
+  <section id="info" aria-labelledby="info-title" style="display:flex;flex-direction:column;gap:32px">
+    <div class="sec-head">
+      <p class="eyebrow"><span lang="ja">情報</span><span>Info práctica</span></p>
+      <h2 id="info-title">Lo que conviene saber</h2>
+    </div>
+
+    <div class="block" id="alojamientos">
+      <h3>Alojamientos</h3>
+      <p>Para el taxi, enseñad la dirección en japonés. Para Google Maps, copiadla y pegadla.</p>
+      <div class="lodgings" id="lodgings"></div>
+    </div>
+
+    <div class="block">
+      <h3>Envío de maletas</h3>
+      <p>Las maletas viajan solas dos veces con Yamato (TA-Q-BIN). Como en los Airbnb no hay recepción, se mandan a una oficina de Yamato cercana y se recogen allí. Vosotros solo lleváis una mochila con lo de esas noches.</p>
+      <ol class="ship" id="ship"></ol>
+      <ul class="ship-notes" id="ship-notes"></ul>
+    </div>
+
+    <div class="block">
+      <h3>Pases y billetes</h3>
+      <p>Nada de JR Pass nacional: dos pases regionales, el Hakone Freepass y el resto en billetes sueltos. Precios por persona; 1.000 ¥ son unos 5,5 €.</p>
+      <ul class="passes" id="passes"></ul>
+    </div>
+
+    <div class="block">
+      <h3>Trucos para el día a día</h3>
+      <div class="tipcols" id="tipcols"></div>
+    </div>
+
+    <div class="block">
+      <h3>Frases que sirven para casi todo</h3>
+      <p>Si no os entienden, enseñad la frase en japonés desde el móvil.</p>
+      <div class="phrases" id="phrases"></div>
+    </div>
+
+    <div class="block">
+      <h3>Emergencias</h3>
+      <div class="sos">
+        <div class="sos-card"><span class="what">Policía</span><span class="num">110</span><button type="button" class="copy" data-copy="110">Copiar</button></div>
+        <div class="sos-card"><span class="what">Ambulancia y bomberos</span><span class="num">119</span><button type="button" class="copy" data-copy="119">Copiar</button></div>
+        <div class="sos-card"><span class="what">Japan Visitor Hotline</span><span class="num">050-3816-2787</span><span class="sub">Ayuda al turista, 24 h, en inglés</span><button type="button" class="copy" data-copy="050-3816-2787">Copiar</button></div>
+      </div>
+      <p class="note">Guardad antes de salir el teléfono de emergencia consular de la Embajada de España en Tokio.</p>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <details>
+      <summary>Fuentes consultadas</summary>
+      <ul id="sources"></ul>
+    </details>
+    <p>Actualizado el 5 de octubre de 2026. La versión editable está en el documento <a href="https://claude.ai/code/artifact/aafffd84-b21b-43b2-828b-6c9d06e4a5d1">Japón 2026 · Guía del viaje</a>.</p>
+  </footer>
+</main>
+
+<script>
+(function () {
+  "use strict";
+
+  var CITY = {
+    osaka:  { name: "Osaka",  code: "OS", band: "var(--osaka)",  ink: "var(--osaka-ink)" },
+    kyoto:  { name: "Kioto",  code: "KY", band: "var(--kyoto)",  ink: "var(--kyoto-ink)" },
+    hakone: { name: "Hakone", code: "HK", band: "var(--hakone)", ink: "var(--hakone-ink)" },
+    tokyo:  { name: "Tokio",  code: "TK", band: "var(--tokyo)",  ink: "var(--tokyo-ink)" }
+  };
+
+  var DAYS = [
+    {
+      n: 1, iso: "2026-10-30", dow: "Vie", d: "30", m: "oct", city: "osaka",
+      kanji: "新世界", romaji: "Shinsekai", short: "Llegada", title: "Llegada a Osaka", badges: [],
+      idea: "Aterrizamos a las 12:40 y nos quedamos cerca de casa: el Airbnb está en Shinsekai, a dos calles de la torre Tsutenkaku.",
+      logi: [["Vuelo", "Llegada a Kansai (KIX) a las 12:40"], ["Dormimos", "Airbnb en Shinsekai (Naniwa)"], ["Transporte", "Tren Haruka hasta Tennoji y JR una parada hasta Shin-Imamiya, todo en el Kansai-Hiroshima Area Pass. Luego ~10 min a pie"], ["No olvidéis", "El pasaporte, para canjear el pase"]],
+      blocks: [
+        { k: "move", l: "Al llegar", items: ["En la estación del aeropuerto, canjead el Kansai-Hiroshima Area Pass y reservad ya los Shinkansen del domingo 1 nov, los 6 juntos.", "Tren Haruka hasta Tennoji, JR hasta Shin-Imamiya y check-in hacia las 15:30."] },
+        { k: "afternoon", l: "Tarde", place: "Shinsekai", items: ["Primer paseo por el barrio: la torre Tsutenkaku, los carteles gigantes de neón y los salones recreativos antiguos.", "Al atardecer (~17:10), mirador Harukas 300 en el rascacielos Abeno Harukas, a 15 min andando por el parque de Tennoji."] },
+        { k: "night", l: "Noche", place: "Shinsekai", items: ["Cena de kushikatsu (brochetas fritas) en el callejón Jan-Jan Yokocho, a la vuelta de la esquina."] }
+      ],
+      tips: ["Noche temprana: el jet lag se nota el primer día.", "En los bares de kushikatsu está prohibido mojar dos veces en la salsa común."]
+    },
+    {
+      n: 2, iso: "2026-10-31", dow: "Sáb", d: "31", m: "oct", city: "osaka",
+      kanji: "大阪", romaji: "Osaka", short: "Osaka", title: "Osaka a fondo y Halloween", badges: ["Halloween"],
+      idea: "Un día entero en Osaka con el Amazing Pass (metro ilimitado y entrada a unas 40 atracciones) y, de noche, Halloween.",
+      logi: [["Dormimos", "Airbnb en Shinsekai"], ["Transporte", "Metro, incluido en el Osaka Amazing Pass"], ["Comprar", "Osaka Amazing Pass de 1 día (3.500 ¥), online"]],
+      blocks: [
+        { k: "morning", l: "Mañana", place: "Castillo de Osaka", items: ["Paseo por el parque y las murallas, y barca Gozabune por el foso, incluida en el pase. El interior del torreón es un museo moderno: con Himeji al día siguiente, os lo podéis saltar."] },
+        { k: "noon", l: "Mediodía", place: "Umeda", items: ["Mirador del Umeda Sky Building. Con el pase hay que entrar antes de las 15:00.", "Nintendo OSAKA, en la planta 13 de los almacenes Daimaru Umeda, con Pokémon Center y Capcom en la misma planta.", "**Plan alternativo:** Nakazakicho, a 5 min a pie, con casas antiguas convertidas en cafés y tiendas vintage, o la noria roja del HEP Five, incluida en el pase."] },
+        { k: "afternoon", l: "Tarde", place: "Namba", items: ["Mercado de Kuromon antes de las 17:00, cuando cierran casi todos los puestos: brochetas de wagyu, tamagoyaki y erizo.", "Hozenji Yokocho, el callejón de los farolillos. Después, a casa a descansar un rato y dejar hecha la mochila de mañana."] },
+        { k: "night", l: "Noche", place: "Halloween", items: ["Crucero Tombori por el canal al anochecer (incluido en el pase) y cena en Ura-Namba, los callejones de izakayas detrás de la estación de Namba.", "Dotonbori, Amerikamura y el parque Sankaku se llenan de gente disfrazada: es la noche más animada del año en Osaka. Para seguir de fiesta, Amerikamura tiene bares y clubs pequeños.", "A casa, dos paradas de metro o un taxi corto."] }
+      ],
+      tips: ["Mañana se sale hacia las 8:00. Si la noche se alarga, mirad el plan B del día 3."]
+    },
+    {
+      n: 3, iso: "2026-11-01", dow: "Dom", d: "1", m: "nov", city: "osaka",
+      kanji: "姫路・広島", romaji: "Himeji · Hiroshima", short: "Himeji · Hiroshima", title: "Himeji, Hiroshima y Miyajima", badges: ["El día más largo"],
+      idea: "Castillo de Himeji a primera hora, Hiroshima a mediodía y el torii de Miyajima al atardecer. Todos los trenes y el ferry entran en el pase.",
+      logi: [["Dormimos", "Airbnb en Shinsekai"], ["Transporte", "Metro Midosuji de Dobutsuen-mae a Shin-Osaka (~20 min); Shinkansen a Himeji, a Hiroshima y vuelta; tren JR y ferry a Miyajima. Todo en el pase menos el metro"], ["Reservado antes", "Asientos de Shinkansen y entrada web del Museo de la Paz (hacia las 13:30)"], ["Maletas", "Salen esta mañana hacia Kioto. En la mochila, lo de esta noche"]],
+      blocks: [
+        { k: "move", l: "Primera hora", items: ["Hacia las 7:45, maletas a un konbini con el logo de Yamato de camino al metro (abren 24 h), con entrega en la oficina más cercana a la casa de Kioto.", "Metro a Shin-Osaka y Shinkansen a Himeji (30 min)."] },
+        { k: "morning", l: "Mañana", place: "Himeji", items: ["Castillo a la apertura, a las 9:00, antes de las colas del domingo. Entrada: 2.500 ¥. Calculad unas 2 horas.", "Los jardines Koko-en, solo si vais sobrados de tiempo."] },
+        { k: "noon", l: "Mediodía", place: "Hiroshima", items: ["Shinkansen a Hiroshima (~1 h). Para comer, okonomiyaki de Hiroshima: en capas y con fideos.", "Parque de la Paz, Cúpula de la Bomba Atómica y Museo Memorial de la Paz: 1 h 30 min y 200 ¥."] },
+        { k: "afternoon", l: "Tarde", place: "Miyajima", items: ["Tren JR a Miyajimaguchi y ferry, ~1 h en total. En el ferry se pagan 100 ¥ de tasa.", "Santuario de Itsukushima y el gran torii al atardecer, hacia las 17:15. Ostras a la brasa y momiji manju en la calle Omotesando."] },
+        { k: "night", l: "Noche", items: ["Vuelta a Osaka cenando un ekiben (bento de tren). Llegada a casa hacia las 22:00."] },
+        { k: "alt", l: "Plan B si la noche se alargó", items: ["Salir hacia las 9:30: llegáis a Himeji sobre las 10:15, con algo de cola, y el resto del día sigue igual.", "Más suave: saltaros Himeji y salir a media mañana directos a Hiroshima y Miyajima."] }
+      ],
+      tips: ["Por qué Himeji va primero: deja de admitir visitantes a las 16:00 y a primera hora no hay cola, y el torii de Miyajima luce más al atardecer.", "Mirad antes la tabla de mareas de Miyajima: con marea alta el torii «flota»; con marea baja se llega andando hasta él.", "El teleférico del Monte Misen no da tiempo: solo sube hasta las 16:00."]
+    },
+    {
+      n: 4, iso: "2026-11-02", dow: "Lun", d: "2", m: "nov", city: "kyoto",
+      kanji: "奈良", romaji: "Nara", short: "Nara", title: "Nara, llegada a Kioto y free tour por Gion", badges: ["Free tour"],
+      idea: "Mañana en Nara, tarde para instalarnos en Kioto y, de noche, un free tour en español por el barrio de las geishas.",
+      logi: [["Dormimos", "Casa de madera en Gojo, Kioto (Airbnb)"], ["Transporte", "JR, todo en el pase: Shin-Imamiya → Nara → Kioto; metro una parada hasta Gojo"], ["Maletas", "Recogedlas al llegar en la oficina de Yamato, con el pasaporte"], ["Reservado antes", "Free tour nocturno por Gion (2 h, en español)"]],
+      blocks: [
+        { k: "move", l: "Primera hora", items: ["JR línea Yamatoji desde Shin-Imamiya hasta Nara (~40 min). Sin maletas: viajan solas."] },
+        { k: "morning", l: "Mañana", place: "Nara", items: ["Parque de los ciervos y templo Todai-ji, el del Gran Buda, antes de las 10:30, cuando llegan los grupos escolares.", "Terraza del Nigatsu-do y camino de faroles de piedra hasta el santuario Kasuga Taisha.", "Opcional: Exposición del Shosoin, abierta solo hasta el 9 nov."] },
+        { k: "lunch", l: "Comida", place: "Naramachi", items: ["El barrio antiguo de Nara. Probad el kakinoha-zushi, sushi envuelto en hoja de caqui."] },
+        { k: "afternoon", l: "Tarde", place: "Kioto", items: ["JR a Kioto. Si vais bien de tiempo, parada en Uji, en la misma línea: templo Byodo-in (el de la moneda de 10 ¥) y la calle del té.", "Recoger las maletas en la oficina de Yamato, metro hasta Gojo y check-in."] },
+        { k: "night", l: "Noche", place: "Free tour por Gion", items: ["Paseo de 2 horas en español por el barrio de las geishas: puente Tatsumi, santuario Yasaka y calle Hanamikoji. Se paga la voluntad.", "Cena por Gion al terminar."] }
+      ],
+      tips: ["Los callejones privados de Hanamikoji están cerrados a turistas, con multa, y a las geikos no se las fotografía sin permiso.", "Los ciervos de Nara hacen reverencias, pero muerden si ven galletas."]
+    },
+    {
+      n: 5, iso: "2026-11-03", dow: "Mar", d: "3", m: "nov", city: "kyoto",
+      kanji: "嵐山", romaji: "Arashiyama", short: "Arashiyama", title: "Arashiyama y Kinkaku-ji", badges: ["Festivo nacional"],
+      idea: "Es festivo y Arashiyama se llena desde las 10:00. Llegamos al amanecer y luego vamos hacia el norte, donde casi nadie camina.",
+      logi: [["Dormimos", "Casa de madera en Gojo"], ["Transporte", "JR línea Sagano desde Tambaguchi (15 min a pie de casa; último día del pase) o dos taxis. Por la tarde, tranvía Randen o taxi"], ["Reservado antes", "Cena en Pontocho para 6"]],
+      blocks: [
+        { k: "dawn", l: "Amanecer", items: ["Bosque de bambú de Sagano antes de las 7:00, vacío y con niebla."] },
+        { k: "morning", l: "Mañana", items: ["Jardín del templo Tenryu-ji a la apertura y villa Okochi Sanso, con té matcha incluido.", "A pie hacia el norte: Gio-ji (jardín de musgo), la calle Saga-Toriimoto de casas de madera y Otagi Nenbutsu-ji, con 1.200 estatuas de piedra, cada una con una cara distinta."] },
+        { k: "lunch", l: "Comida", items: ["Yudofu (tofu caliente), la especialidad de Arashiyama."] },
+        { k: "afternoon", l: "Tarde", items: ["Tranvía Randen o taxi (~20 min) hasta Ryoan-ji, el jardín de rocas zen.", "Kinkaku-ji, el Pabellón Dorado, con la luz de la tarde. Cierra a las 17:00."] },
+        { k: "night", l: "Noche", place: "Pontocho", items: ["Cena en el callejón de restaurantes junto al río."] }
+      ],
+      tips: ["El color otoñal viene tarde este año: veréis los primeros tonos rojos, pero el pico en Arashiyama se espera hacia el 24 de noviembre."]
+    },
+    {
+      n: 6, iso: "2026-11-04", dow: "Mié", d: "4", m: "nov", city: "kyoto",
+      kanji: "伏見稲荷", romaji: "Fushimi Inari", short: "Fushimi Inari", title: "Fushimi Inari, Higashiyama y Camino del Filósofo", badges: [],
+      idea: "El Kioto más clásico, de sur a norte.",
+      logi: [["Dormimos", "Casa de madera en Gojo"], ["Transporte", "Metro hasta la estación de Kioto y JR línea Nara hasta Inari; después bus, metro o taxi, con la tarjeta Suica"]],
+      blocks: [
+        { k: "dawn", l: "Amanecer", place: "Fushimi Inari", items: ["El santuario de los miles de toriis rojos. Subid hasta el mirador de Yotsutsuji (~45 min): a partir de ahí casi no hay nadie."] },
+        { k: "morning", l: "Mañana", items: ["Templo Tofuku-ji, con su puente de madera sobre un valle de arces.", "Kiyomizu-dera y su gran terraza de madera."] },
+        { k: "noon", l: "Mediodía", items: ["Bajada por Sannenzaka y Ninenzaka, calles de piedra con casas antiguas, hasta la pagoda Yasaka. Comida por la zona."] },
+        { k: "afternoon", l: "Tarde", items: ["Templo Nanzen-ji, con un acueducto de ladrillo en medio del bosque.", "Camino del Filósofo junto al canal y Ginkaku-ji, el Pabellón de Plata, que cierra a las 17:00."] },
+        { k: "night", l: "Noche", items: ["Última cena en Kioto. Antes de dormir, preparad las maletas: mañana viajan a Tokio."] }
+      ],
+      tips: ["Quien prefiera Kiyomizu vacío puede ir al amanecer: abre a las 6:00, y se cambia el orden con Fushimi."]
+    },
+    {
+      n: 7, iso: "2026-11-05", dow: "Jue", d: "5", m: "nov", city: "hakone",
+      kanji: "箱根湯本", romaji: "Hakone-Yumoto", short: "Hacia Hakone", title: "De Kioto a Hakone", badges: [],
+      idea: "Las maletas salen hacia Tokio y nosotros, con mochila, hacia el onsen.",
+      logi: [["Dormimos", "Hotel Hakonenomori Okada, en Hakone-Yumoto"], ["Transporte", "Shinkansen Hikari Kioto → Odawara (~2 h) y tren de montaña a Hakone-Yumoto"], ["Comprar en Odawara", "Hakone Freepass de 3 días (6.400 ¥)"], ["Maletas", "Salen esta mañana hacia Tokio. Mochila para 2 noches"]],
+      blocks: [
+        { k: "morning", l: "Mañana", items: ["Maletas a una oficina de Yamato, con entrega en la oficina más cercana al Airbnb de Tokio.", "Templo Nishi Hongan-ji, a unos 15 min a pie de casa: salas de madera gigantescas, entrada libre y abierto desde primera hora.", "Brunch en el mercado de Nishiki, la «cocina de Kioto»: brochetas, tofu, encurtidos y dulces de matcha."] },
+        { k: "move", l: "Mediodía", items: ["Shinkansen Hikari a Odawara. El Nozomi no para allí.", "En Odawara, Hakone Freepass y tren de montaña hasta Hakone-Yumoto (~15 min)."] },
+        { k: "afternoon", l: "Tarde", items: ["Al hotel, en la parte tranquila de Hakone-Yumoto: autobús de la zona termal (10 min, 200 ¥) o 20 min andando."] },
+        { k: "night", l: "Noche", items: ["Baños termales al aire libre y cena en el hotel."] }
+      ],
+      tips: ["En el onsen: ducha antes de entrar, sin bañador y la toalla pequeña fuera del agua. Si alguien lleva tatuajes, preguntad en recepción."]
+    },
+    {
+      n: 8, iso: "2026-11-06", dow: "Vie", d: "6", m: "nov", city: "hakone",
+      kanji: "箱根", romaji: "Hakone", short: "Hakone", title: "El circuito de Hakone", badges: ["El mejor otoño del viaje"],
+      idea: "Lo hacemos al revés de lo habitual: en otoño hay menos atascos y llegamos al santuario antes que las colas.",
+      logi: [["Dormimos", "Hotel Hakonenomori Okada"], ["Transporte", "Bus, barco, teleférico, funicular y tren de montaña, todo en el Hakone Freepass"]],
+      blocks: [
+        { k: "morning", l: "Mañana", place: "Lago Ashi", items: ["Bus de Hakone-Yumoto a Moto-Hakone (~40 min).", "Santuario de Hakone entre cedros gigantes. A primera hora, la foto del torii sobre el agua casi no tiene cola.", "Barco por el lago hasta Togendai: con cielo despejado, el Fuji asoma al fondo."] },
+        { k: "noon", l: "Mediodía", place: "Owakudani", items: ["Teleférico hasta este valle volcánico: fumarolas, vistas al Fuji y huevos negros cocidos en agua termal."] },
+        { k: "afternoon", l: "Tarde", place: "Gora", items: ["Teleférico y funicular hasta Gora, y Museo al Aire Libre de Hakone: esculturas en el bosque y un baño de pies termal gratis. Cierra a las 17:00.", "Vuelta a Yumoto en el tren de montaña, que sube y baja en zigzag entre arces."] },
+        { k: "night", l: "Noche", items: ["Onsen y cena en el hotel. Mirad el pronóstico del Fuji para mañana y decidid el plan del día 9."] },
+        { k: "alt", l: "Extra", items: ["Desde Togendai, bus a Sengokuhara (~15 min) para ver la pradera de hierba de la pampa, que se pone dorada justo estas semanas."] }
+      ],
+      tips: []
+    },
+    {
+      n: 9, iso: "2026-11-07", dow: "Sáb", d: "7", m: "nov", city: "tokyo",
+      kanji: "東京", romaji: "Tokyo", short: "Hacia Tokio", title: "De Hakone a Tokio y Tori-no-Ichi", badges: ["Tori-no-Ichi"],
+      idea: "Mañana de onsen, tren a Tokio, reencuentro con las maletas y, por la noche, la feria del Tori-no-Ichi.",
+      logi: [["Dormimos", "Airbnb en Sumida, Tokio"], ["Transporte", "Romancecar Metro Hakone directo a Kita-Senju (~2 h) y tren Tobu 3 paradas hasta Kanegafuchi. Si no hay a buena hora, Romancecar a Shinjuku y ~45 min más"], ["Billetes", "Se pueden comprar el mismo día en la estación o la víspera online, si quedan plazas"], ["Maletas", "Recogedlas en la oficina de Yamato de Sumida, con el pasaporte"]],
+      blocks: [
+        { k: "morning", l: "Mañana", items: ["Sin prisa. Los baños del hotel se pueden usar también después del check-out.", "Paseo por la calle principal de Hakone-Yumoto, llena de puestos de dulces y comida."] },
+        { k: "move", l: "Mediodía", items: ["Romancecar hacia Tokio. Los Metro Hakone de fin de semana van directos hasta Kita-Senju, a tres paradas de casa."] },
+        { k: "afternoon", l: "Tarde", place: "Sumida", items: ["Recoger las maletas en la oficina de Yamato, check-in en el Airbnb y descanso."] },
+        { k: "night", l: "Noche", place: "Tori-no-Ichi", items: ["El 7 nov es el primer «día del gallo» de 2026 y se celebra esta feria del Tokio antiguo.", "La más grande es la del santuario Ootori, en Asakusa, a unos 15 min en taxi desde casa: cientos de puestos de kumade, rastrillos de bambú decorados para atraer la suerte. Cada venta se cierra con palmas rítmicas, y hay puestos de comida.", "La feria sigue hasta tarde, así que no hace falta ir con prisa."] },
+        { k: "alt", l: "Alternativa", items: ["Solo con el Fuji totalmente despejado: Kawaguchiko y la pagoda Chureito de camino a Tokio. Con mochila es más llevadero.", "Son unas 2 h 30 min en dos buses con transbordo en Gotemba, y se vuelve en tren Fuji Excursion o en bus a Shinjuku, más ~45 min hasta casa.", "Llegaríais hacia las 19:00: comprobad que la oficina de Yamato sigue abierta, o recoged las maletas el domingo por la mañana."] }
+      ],
+      tips: ["Si reserváis el Romancecar y al final hacéis la alternativa, se puede cancelar antes de la salida con una pequeña comisión."]
+    },
+    {
+      n: 10, iso: "2026-11-08", dow: "Dom", d: "8", m: "nov", city: "tokyo",
+      kanji: "渋谷", romaji: "Shibuya", short: "Shibuya", title: "Harajuku, Omotesando y Shibuya", badges: [],
+      idea: "El Tokio del oeste, en domingo: santuario en el bosque, moda en Harajuku y Shibuya al atardecer.",
+      logi: [["Dormimos", "Airbnb en Sumida"], ["Transporte", "Metro y JR con la tarjeta Suica (~50 min desde casa)"], ["Reservado antes", "Shibuya Sky, franja de las ~16:00"]],
+      blocks: [
+        { k: "morning", l: "Mañana", place: "Meiji Jingu", items: ["Santuario en medio de un bosque. Los domingos de noviembre hay familias con niños en kimono (la fiesta Shichi-Go-San) y alguna boda sintoísta.", "A la salida, en la entrada del parque Yoyogi, bailan los rockabillies de tupé. Solo los domingos."] },
+        { k: "noon", l: "Mediodía", place: "Harajuku", items: ["Calle Takeshita (moda juvenil y crepes), Cat Street y la avenida Omotesando, con edificios de arquitectos como Tadao Ando o Toyo Ito."] },
+        { k: "afternoon", l: "Tarde", place: "Shibuya", items: ["Nintendo TOKYO y Pokémon Center, en la planta 6 de Shibuya Parco.", "Mirador Shibuya Sky al caer el sol, sobre las 16:40."] },
+        { k: "night", l: "Noche", items: ["El cruce de Shibuya iluminado y cena en Nonbei Yokocho, un callejón de bares diminutos junto a las vías."] }
+      ],
+      tips: ["Shibuya queda a unos 50 min de casa: salid temprano para pillar Meiji Jingu tranquilo."]
+    },
+    {
+      n: 11, iso: "2026-11-09", dow: "Lun", d: "9", m: "nov", city: "tokyo",
+      kanji: "浅草", romaji: "Asakusa", short: "Asakusa", title: "Tsukiji y free tour por Asakusa", badges: ["Free tour"],
+      idea: "Desayuno de mercado y el Tokio más tradicional, explicado por un guía y al lado de casa.",
+      logi: [["Dormimos", "Airbnb en Sumida"], ["Transporte", "Metro y tren Tobu con la tarjeta Suica"], ["Reservado antes", "Free tour por Asakusa (2 h, en español)"]],
+      blocks: [
+        { k: "morning", l: "Mañana", place: "Tsukiji", items: ["Desayuno en el mercado exterior: sushi, tortilla japonesa y ostras. Se come en el puesto, no andando."] },
+        { k: "noon", l: "Mediodía", place: "Free tour por Asakusa", items: ["Paseo de 2 horas en español desde la estación de Asakusa: templo Senso-ji, calle Nakamise y las historias del Tokio antiguo. Se paga la voluntad."] },
+        { k: "afternoon", l: "Tarde", items: ["Kappabashi, la calle de los utensilios de cocina: cuchillos y comida de plástico de escaparate.", "Atardecer desde el mirador gratuito de la planta 8 del Centro de Información Turística de Asakusa, frente al templo, con vistas a la Skytree."] },
+        { k: "night", l: "Noche", items: ["Cena en Hoppy-dori, una calle de estofados y cerveza al aire libre.", "Vuelta al Senso-ji, iluminado y sin gente. A casa, 10 min en el tren Tobu."] }
+      ],
+      tips: ["Tsukiji cierra los domingos, los festivos y algunos miércoles: por eso va hoy."]
+    },
+    {
+      n: 12, iso: "2026-11-10", dow: "Mar", d: "10", m: "nov", city: "tokyo",
+      kanji: "秋葉原", romaji: "Akihabara", short: "Akihabara", title: "Yanaka, Ueno, Akihabara y Kodokan", badges: ["Kodokan: plan de Jose"],
+      idea: "Barrios antiguos por la mañana y videojuegos por la tarde. Después, Jose entrena en el Kodokan y el resto tiene plan propio.",
+      logi: [["Dormimos", "Airbnb en Sumida"], ["Transporte", "Metro y JR con la tarjeta Suica"], ["Jose lleva", "El judogi y la confirmación del Kodokan"]],
+      blocks: [
+        { k: "morning", l: "Mañana", place: "Yanaka", items: ["El barrio de casas bajas que sobrevivió a la guerra: templos, gatos, cementerio y la calle comercial Yanaka Ginza.", "Santuario Nezu, con un túnel de pequeños toriis rojos."] },
+        { k: "noon", l: "Mediodía", place: "Ueno", items: ["Parque de Ueno y comida en el mercado Ameyoko. Opcional: Museo Nacional de Tokio."] },
+        { k: "afternoon", l: "Tarde", place: "Akihabara", items: ["Super Potato (videojuegos retro), Mandarake, Radio Kaikan y recreativos de varias plantas."] },
+        { k: "judo", l: "Plan de Jose", place: "Kodokan, 16:00 – 20:00", items: ["A 10 min de Akihabara (JR hasta Suidobashi). Entrenamiento de adultos entre semana de 16:00 a 20:00.", "Sin hacerse socio se paga por día: 880 ¥."] },
+        { k: "alt", l: "Resto del grupo", place: "16:00 – 20:00", items: ["Jardín Koishikawa Korakuen, junto al Kodokan, uno de los más bonitos de Tokio en otoño (cierra a las 17:00).", "Después, Tokyo Dome City, al lado: montaña rusa, noria y el spa LaQua. O volver a los recreativos de Akihabara.", "Quien quiera, puede ver un rato el entrenamiento gratis desde la galería de la planta 8 del Kodokan."] },
+        { k: "night", l: "Noche", items: ["Cena todos juntos por Suidobashi, Akihabara o Kanda."] }
+      ],
+      tips: []
+    },
+    {
+      n: 13, iso: "2026-11-11", dow: "Mié", d: "11", m: "nov", city: "tokyo",
+      kanji: "豊洲", romaji: "Toyosu", short: "teamLab", title: "teamLab, Palacio Imperial y Ginza", badges: ["teamLab Planets"],
+      idea: "Arte digital por la mañana, jardines y Ginza por la tarde, y cena de monjayaki.",
+      logi: [["Dormimos", "Airbnb en Sumida"], ["Transporte", "Metro y línea Yurikamome con la tarjeta Suica"], ["Reservado antes", "teamLab Planets, a primera hora"], ["Llevar", "Pantalón que se pueda remangar"]],
+      blocks: [
+        { k: "morning", l: "Mañana", place: "teamLab Planets", items: ["Arte digital por el que se camina descalzo y con agua hasta las rodillas. Calculad unas 2 horas."] },
+        { k: "lunch", l: "Comida", place: "Toyosu", items: ["Toyosu Senkyaku Banrai, a una parada: una calle de comida ambientada en el Tokio de época Edo, junto al mercado de Toyosu."] },
+        { k: "afternoon", l: "Tarde", items: ["Jardines Este del Palacio Imperial y la estación de Tokio, de ladrillo rojo.", "Paseo hasta Ginza y su azotea gratuita en Ginza Six."] },
+        { k: "night", l: "Noche", place: "Tsukishima", items: ["Monjayaki: una calle entera de planchas de esta especie de tortilla líquida típica de Tokio."] }
+      ],
+      tips: ["Los Jardines del Palacio cierran lunes y viernes: hoy están abiertos."]
+    },
+    {
+      n: 14, iso: "2026-11-12", dow: "Jue", d: "12", m: "nov", city: "tokyo",
+      kanji: "日光", romaji: "Nikko", short: "Nikko", title: "Excursión a Nikko y despedida", badges: ["Excursión"],
+      idea: "Nikko, el conjunto de santuarios más fastuoso de Japón, en las semanas en que sus arces suelen estar en su punto.",
+      logi: [["Dormimos", "Airbnb en Sumida"], ["Transporte", "Tren Tobu desde Asakusa hasta Tobu-Nikko (~2 h); allí, bus o 30 min a pie hasta los santuarios"], ["Reservado antes", "Cena de despedida para 6"]],
+      blocks: [
+        { k: "move", l: "Primera hora", items: ["Tren Tobu temprano desde Asakusa, a 10 min de casa."] },
+        { k: "morning", l: "Mañana", place: "Toshogu", items: ["Puente rojo de Shinkyo y santuario Toshogu, el de los tres monos y el gato dormido, entre cedros gigantes.", "Santuario Futarasan y mausoleo Taiyuin, más tranquilo y casi igual de bonito."] },
+        { k: "afternoon", l: "Tarde", place: "Kanmangafuchi", items: ["Sendero junto al río con unas 70 estatuas de piedra de Jizo con gorrito rojo.", "Tren de vuelta hacia las 16:00."] },
+        { k: "night", l: "Noche", items: ["Cena de despedida cerca de casa, en Asakusa o junto a la Skytree."] },
+        { k: "alt", l: "Otras opciones", items: ["**Kamakura (~1 h 15 min):** el Gran Buda, el templo Hasedera y el tren costero Enoden hasta la isla de Enoshima.", "**Kawagoe (medio día):** calle de almacenes de la época Edo, a ~30 min de Ikebukuro. Bonita, pero se parece a lo que ya habréis visto en Kioto.", "**Tokio tranquilo:** jardín Shinjuku Gyoen, Shimokitazawa por la tarde y Shinjuku de noche (Omoide Yokocho y Golden Gai)."] }
+      ],
+      tips: ["Si toca hacer compras libres de impuestos, hoy o mañana. No abráis nada: en el aeropuerto lo revisan."]
+    },
+    {
+      n: 15, iso: "2026-11-13", dow: "Vie", d: "13", m: "nov", city: "tokyo",
+      kanji: "押上", romaji: "Oshiage", short: "Vuelta", title: "Skytree y vuelo de vuelta", badges: ["Vuelo 21:00"],
+      idea: "El vuelo sale de Haneda por la noche, así que hay medio día más en Tokio.",
+      logi: [["Vuelo", "Haneda 21:00 → Madrid 7:25 del sábado 14"], ["Transporte", "Tren de Oshiage al aeropuerto de Haneda (~50 min)"], ["Maletas", "En las consignas de la estación de Oshiage hasta la tarde"]],
+      blocks: [
+        { k: "morning", l: "Mañana", items: ["Check-out y maletas a las consignas de la estación de Oshiage o de Tokyo Skytree Town.", "Último paseo por Asakusa o por la orilla del río Sumida."] },
+        { k: "noon", l: "Mediodía", place: "Tokyo Skytree", items: ["Mirador de la Skytree y últimas compras en el centro comercial Solamachi, que tiene Pokémon Center."] },
+        { k: "move", l: "Tarde", place: "Haneda", items: ["Hacia las 17:00, tren de Oshiage a Haneda. Llegad 3 horas antes y sumad media hora para la devolución de impuestos.", "Llevad a mano las compras tax free: hay que enseñarlas sin abrir."] },
+        { k: "night", l: "Noche", items: ["Vuelo a las 21:00. Llegada a Madrid el sábado 14 a las 7:25."] }
+      ],
+      tips: ["Últimos yenes: los konbinis y tiendas del aeropuerto son el mejor sitio para gastarlos."]
+    }
+  ];
+
+  var STAYS = [
+    { city: "osaka", k: "大阪", c: "Osaka", dates: "30 oct – 2 nov", name: "Airbnb en Shinsekai (Naniwa)", near: "A dos calles de la torre Tsutenkaku. Metro Ebisucho y Dobutsuen-mae a ~5 min; JR Shin-Imamiya a ~10 min.", jp: "大阪府大阪市浪速区恵美須東1-15-1 盛隆ビル5F", zip: "〒556-0002 · 1-15-1 Ebisuhigashi, planta 5", maps: "1-15-1 Ebisuhigashi, Naniwa Ward, Osaka 556-0002" },
+    { city: "kyoto", k: "京都", c: "Kioto", dates: "2 – 5 nov", name: "[SEIKO] Cosy 2-storey Wooden House", near: "Shimogyo, junto a Gojo. Metro Gojo (línea Karasuma) a ~8 min; JR Tambaguchi (línea Sagano) a ~15 min.", jp: "京都府京都市下京区中金仏町", zip: "〒600-8332 · El número exacto está en la reserva", maps: "Nakakanabutsucho, Shimogyo Ward, Kyoto 600-8332" },
+    { city: "hakone", k: "箱根", c: "Hakone", dates: "5 – 7 nov", name: "Hotel Hakonenomori Okada", near: "Hakone-Yumoto. Autobús de la zona termal desde la estación (10 min, 200 ¥) o 20 min a pie.", jp: "箱根の森おかだ", zip: "Nombre del hotel: basta para el taxista", maps: "Hakone no Mori Okada, Hakone" },
+    { city: "tokyo", k: "東京", c: "Tokio", dates: "7 – 13 nov", name: "Airbnb en Sumida", near: "Tren Tobu: Kanegafuchi o Higashi-Mukojima a ~5–7 min. Asakusa a ~10 min; Ootori-jinja a ~15 min en taxi.", jp: "東京都墨田区墨田3-12-13", zip: "〒131-0031 · 3-12-13 Sumida", maps: "3-12-13 Sumida, Sumida City, Tokyo 131-0031" }
+  ];
+
+  var SHIP = [
+    { from: "osaka", to: "kyoto", a: "Osaka", b: "Kioto", send: "Domingo 1 nov a primera hora, en un konbini con el logo de Yamato de camino al metro (abren 24 h).", arrive: "Lunes 2 nov, a la oficina de Yamato más cercana a la casa de Kioto. Se recoge al llegar, con el pasaporte.", bag: "Lo de la noche del 1 nov." },
+    { from: "kyoto", to: "tokyo", a: "Kioto", b: "Tokio", send: "Jueves 5 nov por la mañana, antes de salir hacia Hakone. Tarda 1–2 días.", arrive: "Oficina de Yamato más cercana al Airbnb de Sumida. Se recoge el sábado 7 por la tarde, con el pasaporte.", bag: "Lo de las 2 noches de Hakone." }
+  ];
+
+  var SHIPNOTES = [
+    "**Cómo se pide:** al mandarla, decid «eigyōsho-dome» (営業所止め, entrega en oficina) y pedid que os busquen la oficina más cercana al código postal del alojamiento: 600-8332 en Kioto y 131-0031 en Tokio.",
+    "Apuntad la dirección y el horario de esa oficina y guardad el resguardo: se recoge con el pasaporte y ese número.",
+    "**Precio:** unos 2.300–2.700 ¥ por maleta grande entre Kansai y Tokio; algo menos de Osaka a Kioto.",
+    "**Alternativa:** Japan Post también guarda paquetes en la oficina de correos («kyoku-dome», 局留め) y se envían desde algunos konbinis."
+  ];
+
+  var CHECKS = [
+    { t: "Transporte", items: [
+      ["t1", "Kansai-Hiroshima Area Pass en JR-WEST Online. Reservad con él los Shinkansen del 1 nov (Osaka → Himeji → Hiroshima → Osaka), los 6 juntos."],
+      ["t2", "Osaka Amazing Pass de 1 día para el 31 oct (online)."],
+      ["t3", "Shinkansen Kioto → Odawara del 5 nov (ya a la venta)."],
+      ["t4", "Romancecar Metro Hakone a Kita-Senju del 7 nov. Si al final hacéis la alternativa, se cancela antes de salir."]
+    ]},
+    { t: "Maletas", items: [
+      ["m1", "Localizad la oficina de Yamato más cercana a la casa de Kioto y su horario del lunes 2 nov."],
+      ["m2", "Lo mismo para el Airbnb de Tokio, con el horario del sábado 7 nov."]
+    ]},
+    { t: "Entradas y tours", items: [
+      ["e1", "Museo de la Paz de Hiroshima: entrada web para el domingo 1 nov, hacia las 13:30."],
+      ["e5", "Free tour nocturno por Gion (GuruWalk o Civitatis), lunes 2 nov."],
+      ["e2", "Shibuya Sky: domingo 8 nov, franja del atardecer (~16:00)."],
+      ["e6", "Free tour por Asakusa (GuruWalk o Civitatis), lunes 9 nov a mediodía."],
+      ["e3", "teamLab Planets: miércoles 11 nov, a primera hora (si no la tenéis ya)."],
+      ["e4", "Opcional: Exposición del Shosoin en Nara, lunes 2 nov."]
+    ]},
+    { t: "Alojamiento y comidas", items: [
+      ["a2", "Hakonenomori Okada: confirmad qué cena incluye la reserva, a qué hora y que la reserva es para 6."],
+      ["a3", "Cenas para 6 en sitios pequeños: Pontocho (3 nov) y la despedida en Tokio (12 nov)."]
+    ]},
+    { t: "Kodokan (Jose)", items: [
+      ["k1", "Escribir a shido@kodokan.org para confirmar que el martes 10 nov hay práctica normal."],
+      ["k2", "Meter el judogi en la maleta."]
+    ]}
+  ];
+
+  var PASSES = [
+    { name: "Kansai-Hiroshima Area Pass", when: "5 días seguidos · 30 oct – 3 nov", price: "17.000 ¥", v: "Sí", c: "yes", why: "Aeropuerto, Shinkansen a Himeji e Hiroshima, ferry de Miyajima, Nara, Kioto y Arashiyama. Esos trayectos sueltos rondan los 27.000 ¥ (aprox.)." },
+    { name: "Osaka Amazing Pass", when: "1 día · 31 oct", price: "3.500 ¥", v: "Sí", c: "yes", why: "Metro, barca Gozabune, Umeda Sky y crucero por el canal." },
+    { name: "Shinkansen Hikari Kioto → Odawara", when: "5 nov", price: "≈ 11.000 ¥", v: "Suelto", c: "", why: "Billete suelto con asiento reservado (precio aproximado)." },
+    { name: "Hakone Freepass", when: "3 días desde Odawara · 5 – 7 nov", price: "6.400 ¥", v: "Sí", c: "yes", why: "Solo el teleférico ya cuesta 2.000 ¥ por trayecto." },
+    { name: "Romancecar hacia Tokio", when: "7 nov", price: "Aparte", v: "Suelto", c: "", why: "Metro Hakone a Kita-Senju (cerca de casa) o Romancecar normal a Shinjuku. Se compra hasta el mismo día si quedan plazas." },
+    { name: "Tarjeta Suica o ICOCA", when: "Todo el viaje · física o en el móvil", price: "Recargable", v: "Imprescindible", c: "yes", why: "Metro, buses, trenes Tobu y al aeropuerto, konbinis y taquillas." },
+    { name: "JR Pass nacional de 14 días", when: "—", price: "80.000 ¥", v: "No", c: "no", why: "Sale más caro que los pases regionales y los billetes sueltos." }
+  ];
+
+  var TIPCOLS = [
+    { t: "Moverse siendo 6", items: [
+      "**Shinkansen:** los asientos de una fila de 3 se pueden girar para quedar frente a la fila de detrás. Reservad dos filas de 3 seguidas y viajáis los 6 juntos.",
+      "**Taxis:** llevan 4 personas. Pedid dos, o un taxi grande con la app GO.",
+      "**Bares y restaurantes:** muchos tienen 6–8 asientos. Reservad o separaos en dos grupos de 3.",
+      "**Free tours:** duran 2 horas y se paga la voluntad. Merecen la pena en Kioto (Gion) y Tokio (Asakusa); en Osaka no compensan."
+    ]},
+    { t: "Dinero y compras", items: [
+      "**Tax free nuevo desde el 1 de noviembre:** se paga el precio con el 10 % de IVA, se enseña el pasaporte al comprar y el dinero se devuelve al salir de Japón, tras pasar por la aduana.",
+      "No abráis lo comprado y llevadlo a mano en el aeropuerto. Lo que compréis el 30 y el 31 de octubre aún lleva el descuento directo en caja.",
+      "Casi todo se paga con tarjeta, pero templos, puestos de feria, free tours y bares pequeños van en efectivo. Los cajeros de 7-Eleven aceptan tarjetas extranjeras."
+    ]},
+    { t: "Costumbres y clima", items: [
+      "**Internet:** una eSIM de datos para cada uno.",
+      "**Luz:** anochece sobre las 16:40 en Tokio y las 17:15 en Hiroshima. Lo de aire libre, por la mañana.",
+      "**Ropa:** días de 12 a 20 °C y noches frías en Hakone, cerca de 5 °C. Capas y zapatos fáciles de quitar.",
+      "**Normas:** no se come andando por la calle, casi no hay papeleras (llevad una bolsa) y en trenes y metro, silencio."
+    ]}
+  ];
+
+  var PHRASES = [
+    ["Hola", "こんにちは", "Konnichiwa"],
+    ["Perdón / disculpe (también para llamar al camarero)", "すみません", "Sumimasen"],
+    ["Gracias", "ありがとうございます", "Arigatō gozaimasu"],
+    ["Esto, por favor", "これをください", "Kore o kudasai"],
+    ["Somos seis", "6人です", "Rokunin desu"],
+    ["La cuenta, por favor", "お会計お願いします", "O-kaikei onegaishimasu"],
+    ["¿Dónde está…?", "…はどこですか?", "… wa doko desu ka?"],
+    ["Estaba buenísimo (al salir del restaurante)", "ごちそうさまでした", "Gochisōsama deshita"]
+  ];
+
+  var SOURCES = [
+    ["Kansai-Hiroshima Area Pass, JR West", "https://www.westjr.co.jp/global/en/ticket/pass/kansai_hiroshima/"],
+    ["Precios del JR Pass en 2026", "https://japanactivity.com/tools/jr-pass-calculator"],
+    ["Osaka Amazing Pass 2026", "https://12go.com/en/railpass/japan/operator-suruto-kansai/osaka-amazing-pass-JP0000kDawc1mZ000ne0010000101s0000000"],
+    ["Tiendas Nintendo en Tokio, Osaka y Kioto", "https://timeextension.com/features/retail-therapy-nintendo-stores-japan-tokyo-osaka-kyoto"],
+    ["Castillo de Himeji: tarifas desde marzo de 2026", "https://www.himejicastle.jp/fr"],
+    ["Museo Memorial de la Paz de Hiroshima", "https://hpmmuseum.jp/?lang=eng"],
+    ["Teleférico de Miyajima", "https://www.miyajima-ropeway.info/en/"],
+    ["Exposición del Shosoin 2026", "https://precious.jp/articles/-/62779"],
+    ["Free tour por Gion, Civitatis", "https://www.civitatis.com/es/kioto/free-tour-barrio-gion/"],
+    ["Free tour nocturno por Gion, GuruWalk", "https://www.guruwalk.com/es/walks/54591-free-tour-nocturno-a-pie-por-kioto-gion-geisha"],
+    ["Free tour por Asakusa, Civitatis", "https://www.civitatis.com/es/tokio/free-tour-asakusa/"],
+    ["Previsión de otoño 2026, Weathernews", "https://www.travelvoice.jp/20260904-160458"],
+    ["Otoño en Hakone 2026", "https://vegcale.com/2026/09/27/hakone-koyo-2026/"],
+    ["Hakonenomori Okada: acceso y baños", "https://www.jalan.net/yad307128/"],
+    ["Hakone Freepass: precios, Odakyu", "https://www.odakyu.jp/wordpress/wp-content/uploads/96303a384a96b2c9b6a46b6121f6a9b3.pdf"],
+    ["Autobuses de Hakone en otoño", "https://banzokubiology.com/hakone-bus-koyo-congestion/"],
+    ["Hakone → Kawaguchiko en bus", "https://japlanease.com/hakone-to-kawaguchiko-transport/"],
+    ["Romancecar Metro Hakone a Kita-Senju", "https://ekitan.com/zh-tw/article/metro-hakone-romancecar"],
+    ["Envío de maletas con Yamato: precios y plazos", "https://selfguidejapan.com/blog/luggage-forwarding-japan"],
+    ["Envío de maletas a un Airbnb", "https://real-japan-guide.com/?p=1751"],
+    ["Estaciones cerca de Nakakanabutsu-cho, Kioto", "https://mansion-market.com/mansions/areas/kyoto/c26106/s26106326"],
+    ["Estaciones cerca de Sumida 3-chome, Tokio", "https://www.rehouse.co.jp/mansionlibrary/area/prefecture/13/city/13107/town/13107009/"],
+    ["Calendario del Tori-no-Ichi 2026", "https://www.moocota.com/tori-no-hi-calendar/"],
+    ["Tori-no-Ichi del santuario Ootori, Asakusa", "https://rurubu.jp/andmore/spot/20000348"],
+    ["Otoño en Nikko Toshogu", "https://rurubu.jp/andmore/spot/80006794/koyo"],
+    ["Excursión a Kawagoe", "https://japanactivity.com/kawagoe-day-trip-from-tokyo"],
+    ["Karuizawa", "https://japanactivity.com/attractions/karuizawa"],
+    ["Kodokan: horarios de práctica", "https://kdkjd.org/dojo-events/"],
+    ["Kodokan: tarifas", "https://kdkjd.org/%E5%85%A5%E9%96%80%E6%89%8B%E7%B6%9A%E3%81%8D/"],
+    ["teamLab Planets", "https://www.artvisitguide.com/teamlab-planets-vs-borderless-tokyo/"],
+    ["Tsukiji: días de cierre", "https://banzokubiology.com/?p=24170"],
+    ["Museo Ghibli: cierre en noviembre de 2026", "https://watabi.org/en/articles/ghibli-museum-guide"],
+    ["Retirada del Gundam de Odaiba", "https://www.tokyoweekender.com/japan-life/news-and-opinion/tokyo-unicorn-gundam-statue-display-to-end-in-august/"],
+    ["Nuevo sistema tax free", "https://en.japantravel.com/article/tax-free-shopping-in-japan-2026-changes/72305"]
+  ];
+
+  var SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">';
+  var ICONS = {
+    move: SVG + '<rect x="6" y="3" width="12" height="14" rx="3"/><path d="M6 10h12M9.5 13.5h.01M14.5 13.5h.01M9 17l-2 3M15 17l2 3"/></svg>',
+    dawn: SVG + '<path d="M3 19h18M7 19a5 5 0 0 1 10 0M12 8v3M5.5 12.5l1.8 1.3M18.5 12.5l-1.8 1.3"/></svg>',
+    morning: SVG + '<circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4L7 17M17 7l1.4-1.4"/></svg>',
+    noon: SVG + '<circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5"/></svg>',
+    lunch: SVG + '<path d="M4 12h16a8 8 0 0 1-16 0zM13 3.5l-3 6.5M18 3.5l-4.5 6.5"/></svg>',
+    afternoon: SVG + '<path d="M3 19h18M7 19a5 5 0 0 1 10 0M12 7v4M9.8 9.3L12 11.2l2.2-1.9"/></svg>',
+    night: SVG + '<path d="M19.5 14.2A7.5 7.5 0 1 1 9.8 4.5a6 6 0 0 0 9.7 9.7z"/></svg>',
+    alt: SVG + '<path d="M4 7.5h12l-3-3M20 16.5H8l3 3"/></svg>',
+    judo: SVG + '<path d="M3 10.5h18M3 13.5h18M12 12l-3 8M12 12l3 8"/><circle cx="12" cy="12" r="1.6"/></svg>'
+  };
+
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+    });
+  }
+  function fmt(s) { return esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>"); }
+  function pad(n) { return n < 10 ? "0" + n : String(n); }
+
+  function store(key, val) {
+    try {
+      if (val === undefined) return window.localStorage.getItem(key);
+      window.localStorage.setItem(key, val);
+    } catch (e) { return null; }
+    return null;
+  }
+
+  function dateIn(tz) {
+    try {
+      return new Intl.DateTimeFormat("en-CA", { timeZone: tz, year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+    } catch (e) {
+      var d = new Date();
+      return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
+    }
+  }
+  function dayNumber(iso) {
+    var p = iso.split("-").map(Number);
+    return Date.UTC(p[0], p[1] - 1, p[2]) / 864e5;
+  }
+
+  var japanToday = dateIn("Asia/Tokyo");
+  var todayIndex = -1;
+  DAYS.forEach(function (d, i) { if (d.iso === japanToday) todayIndex = i; });
+
+  // Estado de la cabecera
+  (function status() {
+    var el = document.getElementById("status");
+    var spain = dayNumber(dateIn("Europe/Madrid"));
+    var dep = dayNumber("2026-10-29");
+    var end = dayNumber("2026-11-13");
+    var txt;
+    if (todayIndex >= 0) txt = "Hoy es el día " + DAYS[todayIndex].n + " de 15";
+    else if (spain < dep) {
+      var left = dep - spain;
+      txt = left === 1 ? "Mañana salimos hacia Japón" : "Faltan " + left + " días para salir";
+    } else if (spain === dep) txt = "Hoy salimos hacia Japón";
+    else if (spain > end) txt = "Viaje completado";
+    else txt = "29 oct – 13 nov";
+    el.textContent = txt;
+  })();
+
+  // Línea de días
+  var stations = document.getElementById("stations");
+  stations.innerHTML = DAYS.map(function (d, i) {
+    var c = CITY[d.city];
+    return '<li class="st" style="--c:' + c.ink + '">' +
+      '<button type="button" id="st-' + d.n + '" data-i="' + i + '" aria-label="Día ' + d.n + ', ' + d.dow + ' ' + d.d + ' ' + d.m + ': ' + esc(d.title) + '">' +
+      (i === todayIndex ? '<span class="today-tag">HOY</span>' : '') +
+      '<span class="st-dot"></span><span class="st-n">' + d.n + '</span>' +
+      '<span class="st-date">' + d.d + ' ' + d.m + '</span>' +
+      '<span class="st-place">' + esc(d.short) + '</span></button></li>';
+  }).join("");
+
+  var dayEl = document.getElementById("day");
+  var current = 0;
+
+  function renderDay(i) {
+    var d = DAYS[i];
+    var c = CITY[d.city];
+    var prev = DAYS[i - 1];
+    var next = DAYS[i + 1];
+    dayEl.style.setProperty("--line", c.band);
+    dayEl.style.setProperty("--line-ink", c.ink);
+
+    var html = '';
+    html += '<article class="sign" aria-labelledby="day-title">' +
+      '<div class="sign-top">' +
+        '<div class="code" aria-label="Día ' + d.n + ' en ' + c.name + '"><span>' + c.code + '</span><b>' + pad(d.n) + '</b></div>' +
+        '<div class="sign-name">' +
+          '<p class="kanji" lang="ja">' + esc(d.kanji) + '</p>' +
+          '<p class="romaji">' + esc(d.romaji) + '</p>' +
+          '<h3 class="day-title" id="day-title">Día ' + d.n + ' · ' + esc(d.title) + '</h3>' +
+        '</div>' +
+        '<div class="cal" aria-label="' + d.dow + ' ' + d.d + ' de ' + d.m + '"><span>' + d.dow + '</span><b>' + d.d + '</b><span>' + d.m + '</span></div>' +
+      '</div>' +
+      '<div class="sign-band">' +
+        '<button type="button" class="prev" data-go="' + (i - 1) + '"' + (prev ? '' : ' disabled') + '>' + (prev ? '← <span>' + prev.n + ' · ' + esc(prev.short) + '</span>' : '') + '</button>' +
+        '<button type="button" class="next" data-go="' + (i + 1) + '"' + (next ? '' : ' disabled') + '>' + (next ? '<span>' + next.n + ' · ' + esc(next.short) + '</span> →' : '') + '</button>' +
+      '</div>' +
+    '</article>';
+
+    html += '<p class="idea">' + fmt(d.idea) + '</p>';
+    if (d.badges.length) {
+      html += '<div class="badges">' + d.badges.map(function (b) { return '<span class="badge">' + esc(b) + '</span>'; }).join("") + '</div>';
+    }
+
+    html += '<dl class="ticket">' + d.logi.map(function (r) {
+      return '<div><dt>' + esc(r[0]) + '</dt><dd>' + fmt(r[1]) + '</dd></div>';
+    }).join("") + '</dl>';
+
+    html += '<ol class="timeline">' + d.blocks.map(function (b) {
+      return '<li class="tl' + (b.k === "alt" ? ' alt' : '') + '">' +
+        '<span class="tl-ico">' + (ICONS[b.k] || ICONS.morning) + '</span>' +
+        '<div class="tl-body"><p class="tl-label">' + esc(b.l) + (b.place ? '<span class="place">' + esc(b.place) + '</span>' : '') + '</p>' +
+        b.items.map(function (t) { return '<p>' + fmt(t) + '</p>'; }).join("") +
+        '</div></li>';
+    }).join("") + '</ol>';
+
+    if (d.tips.length) {
+      html += '<aside class="tips"><h4>' + (d.tips.length > 1 ? 'Consejos del día' : 'Consejo del día') + '</h4><ul>' +
+        d.tips.map(function (t) { return '<li>' + fmt(t) + '</li>'; }).join("") + '</ul></aside>';
+    }
+
+    html += '<nav class="day-nav" aria-label="Cambiar de día">' +
+      '<button type="button" class="prev" data-go="' + (i - 1) + '" data-scroll="1"' + (prev ? '' : ' disabled') + '><small>Día anterior</small><span>' + (prev ? '← ' + prev.n + ' · ' + esc(prev.short) : '') + '</span></button>' +
+      '<button type="button" class="next" data-go="' + (i + 1) + '" data-scroll="1"' + (next ? '' : ' disabled') + '><small>Día siguiente</small><span>' + (next ? next.n + ' · ' + esc(next.short) + ' →' : '') + '</span></button>' +
+    '</nav>';
+
+    dayEl.innerHTML = html;
+  }
+
+  function select(i, opts) {
+    if (i < 0 || i >= DAYS.length) return;
+    current = i;
+    renderDay(i);
+    var btns = stations.querySelectorAll("button");
+    for (var k = 0; k < btns.length; k++) btns[k].setAttribute("aria-current", k === i ? "true" : "false");
+    var st = document.getElementById("st-" + DAYS[i].n);
+    var wrap = document.getElementById("strip-wrap");
+    if (st && wrap) {
+      var target = st.parentNode.offsetLeft - wrap.clientWidth / 2 + st.parentNode.offsetWidth / 2;
+      wrap.scrollLeft = Math.max(0, target);
+    }
+    store("jp26-day", String(i));
+    if (opts && opts.scroll) {
+      var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      document.getElementById("itinerario").scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+    }
+  }
+
+  stations.addEventListener("click", function (e) {
+    var b = e.target.closest("button[data-i]");
+    if (b) select(Number(b.getAttribute("data-i")));
+  });
+  dayEl.addEventListener("click", function (e) {
+    var b = e.target.closest("button[data-go]");
+    if (!b || b.disabled) return;
+    select(Number(b.getAttribute("data-go")), { scroll: b.hasAttribute("data-scroll") });
+  });
+
+  // Día inicial: #dia5 en el enlace, si no el día de hoy en Japón, si no el último visto.
+  var start = 0;
+  var m = /^#dia(\d{1,2})$/.exec(window.location.hash || "");
+  if (m && Number(m[1]) >= 1 && Number(m[1]) <= DAYS.length) start = Number(m[1]) - 1;
+  else if (todayIndex >= 0) start = todayIndex;
+  else {
+    var saved = Number(store("jp26-day"));
+    if (saved >= 0 && saved < DAYS.length) start = saved;
+  }
+  select(start);
+
+  // Reservas
+  var checked = {};
+  try { checked = JSON.parse(store("jp26-checks") || "{}") || {}; } catch (e) { checked = {}; }
+  document.getElementById("checks").innerHTML = CHECKS.map(function (g) {
+    return '<div class="check-group"><h3>' + esc(g.t) + '</h3><ul>' + g.items.map(function (it) {
+      return '<li><label class="check" for="ck-' + it[0] + '"><input type="checkbox" id="ck-' + it[0] + '" data-k="' + it[0] + '"' + (checked[it[0]] ? ' checked' : '') + '><span>' + fmt(it[1]) + '</span></label></li>';
+    }).join("") + '</ul></div>';
+  }).join("");
+  document.getElementById("checks").addEventListener("change", function (e) {
+    var k = e.target.getAttribute("data-k");
+    if (!k) return;
+    checked[k] = e.target.checked;
+    store("jp26-checks", JSON.stringify(checked));
+  });
+
+  // Alojamientos
+  document.getElementById("lodgings").innerHTML = STAYS.map(function (st) {
+    var c = CITY[st.city];
+    return '<article class="lodging" style="--c:' + c.band + ';--c-ink:' + c.ink + '">' +
+      '<div class="l-head"><span class="l-k" lang="ja">' + st.k + '</span><span class="l-city">' + esc(st.c) + '</span><span class="l-dates">' + esc(st.dates) + '</span></div>' +
+      '<p class="l-name">' + esc(st.name) + '</p>' +
+      '<p class="l-near">' + esc(st.near) + '</p>' +
+      '<div class="addr"><span lang="ja">' + esc(st.jp) + '</span><small>' + esc(st.zip) + '</small></div>' +
+      '<div class="l-actions"><button type="button" class="copy" data-copy="' + esc(st.jp) + '">Copiar dirección</button>' +
+      '<a href="https://www.google.com/maps/search/?api=1&amp;query=' + encodeURIComponent(st.maps) + '" target="_blank" rel="noopener">Abrir en Google Maps</a></div>' +
+      '</article>';
+  }).join("");
+
+  // Envío de maletas
+  document.getElementById("ship").innerHTML = SHIP.map(function (sh) {
+    return '<li style="--from:' + CITY[sh.from].ink + ';--to:' + CITY[sh.to].ink + '">' +
+      '<p class="route"><span class="a">' + esc(sh.a) + '</span><i aria-hidden="true">→</i><span class="b">' + esc(sh.b) + '</span></p>' +
+      '<dl><div><dt>Mandar</dt><dd>' + fmt(sh.send) + '</dd></div><div><dt>Llega</dt><dd>' + fmt(sh.arrive) + '</dd></div><div><dt>Mochila</dt><dd>' + fmt(sh.bag) + '</dd></div></dl></li>';
+  }).join("");
+  document.getElementById("ship-notes").innerHTML = SHIPNOTES.map(function (t) { return '<li>' + fmt(t) + '</li>'; }).join("");
+
+  // Info práctica
+  document.getElementById("passes").innerHTML = PASSES.map(function (p) {
+    return '<li class="pass"><span class="p-name">' + esc(p.name) + '</span>' +
+      '<span class="p-right"><span class="p-price">' + esc(p.price) + '</span><span class="verdict ' + p.c + '">' + esc(p.v) + '</span></span>' +
+      '<span class="p-when">' + esc(p.when) + '</span>' +
+      '<span class="p-why">' + esc(p.why) + '</span></li>';
+  }).join("");
+
+  document.getElementById("tipcols").innerHTML = TIPCOLS.map(function (g) {
+    return '<div class="tipcol"><h4>' + esc(g.t) + '</h4><ul>' + g.items.map(function (t) { return '<li>' + fmt(t) + '</li>'; }).join("") + '</ul></div>';
+  }).join("");
+
+  document.getElementById("phrases").innerHTML = PHRASES.map(function (p) {
+    return '<div class="phrase"><span class="es">' + esc(p[0]) + '</span><span class="jp" lang="ja">' + esc(p[1]) + '</span><span class="ro">' + esc(p[2]) + '</span></div>';
+  }).join("");
+
+  document.getElementById("sources").innerHTML = SOURCES.map(function (s) {
+    return '<li><a href="' + esc(s[1]) + '" target="_blank" rel="noopener">' + esc(s[0]) + '</a></li>';
+  }).join("");
+
+  // Copiar teléfonos y direcciones
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("button.copy");
+    if (!b) return;
+    var text = b.getAttribute("data-copy");
+    if (!b.hasAttribute("data-label")) b.setAttribute("data-label", b.textContent);
+    var label = b.getAttribute("data-label");
+    function done(ok) {
+      b.textContent = ok ? "Copiado" : "Texto seleccionado";
+      setTimeout(function () { b.textContent = label; }, 1800);
+    }
+    function fallback() {
+      var card = b.closest(".sos-card, .lodging");
+      var target = card && card.querySelector(".num, .addr span");
+      try {
+        var r = document.createRange();
+        r.selectNodeContents(target);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(r);
+      } catch (err) {}
+      done(false);
+    }
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { done(true); }, fallback);
+      } else fallback();
+    } catch (err) { fallback(); }
+  });
+})();
+</script>
+
+</body></html>
