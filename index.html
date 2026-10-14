@@ -595,6 +595,31 @@ button { font: inherit; color: inherit; }
 .ship dd { margin: 0; }
 .ship-notes { margin: 0; padding-left: 1.1em; display: flex; flex-direction: column; gap: 8px; }
 
+/* Imprescindible */
+.when { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0; background: var(--surface); border-radius: var(--radius); padding: 6px 18px; }
+.when li { display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--rule); }
+.when li:last-child { border-bottom: 0; }
+.when .w-date { font-family: var(--f-mono); font-size: var(--s-1); font-weight: 600; color: var(--accent); padding-top: 2px; }
+.when .w-what { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.when .w-what b { font-weight: 700; }
+.when .w-what span { font-size: var(--s-1); color: var(--muted); }
+.ess { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; align-items: start; }
+.ess-card { background: var(--surface); border-radius: var(--radius); padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; scroll-margin-top: 80px; }
+.ess-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.ess-head .e-k { font-family: var(--f-display); font-weight: 900; font-size: var(--s1); color: var(--accent); }
+.ess-head h4 { font-size: var(--s-0); font-weight: 700; margin-right: auto; }
+.ess-sum { margin: 0; }
+.ess-key { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.ess-key li { font-size: var(--s-1); border-left: 3px solid var(--accent); padding-left: 10px; }
+.ess-card details { border-top: 1px solid var(--rule); padding-top: 10px; }
+.ess-card details summary { font-size: var(--s-1); color: var(--accent); }
+.ess-card details ul { gap: 8px; font-size: var(--s-1); }
+.ess-card details ul li::marker { color: var(--muted); }
+.verdict.must { background: var(--no-bg); color: var(--no); }
+@media (max-width: 420px) {
+  .when li { grid-template-columns: 1fr; gap: 2px; }
+}
+
 footer.foot { display: flex; flex-direction: column; gap: 14px; font-size: var(--s-1); color: var(--muted); border-top: 1px solid var(--rule); padding-top: 20px; }
 details summary { cursor: pointer; font-weight: 700; color: var(--ink); font-size: var(--s-0); }
 details ul { margin: 12px 0 0; padding-left: 1.1em; display: flex; flex-direction: column; gap: 6px; }
@@ -616,6 +641,7 @@ details ul { margin: 12px 0 0; padding-left: 1.1em; display: flex; flex-directio
     <nav class="nav" aria-label="Secciones">
       <a href="#itinerario">Días</a>
       <a href="#reservas">Reservas</a>
+      <a href="#esencial">Esencial</a>
       <a href="#info">Info</a>
     </nav>
   </div>
@@ -660,6 +686,25 @@ details ul { margin: 12px 0 0; padding-left: 1.1em; display: flex; flex-directio
     </div>
     <p class="note"><span>Las ventas abren a las <b>10:00 en Japón</b>, que son las <b>3:00 en España</b>.</span><span>Las marcas se guardan solo en este dispositivo.</span></p>
     <div class="check-groups" id="checks"></div>
+  </section>
+
+  <section id="esencial" aria-labelledby="ess-title" style="display:flex;flex-direction:column;gap:24px">
+    <div class="sec-head">
+      <p class="eyebrow"><span lang="ja">必須</span><span>Imprescindible</span></p>
+      <h2 id="ess-title">Papeles, dinero y móvil</h2>
+      <p>Lo obligatorio y lo que conviene dejar resuelto antes de volar: entrada al país, seguro, cómo pagar sin comisiones, internet y el nuevo tax free.</p>
+    </div>
+
+    <div class="block">
+      <h3>Qué hacer y cuándo</h3>
+      <ol class="when" id="when"></ol>
+    </div>
+
+    <div class="block">
+      <h3>Tema a tema</h3>
+      <p class="note"><span><b>Obligatorio:</b> sin esto no se viaja.</span><span><b>Muy recomendable:</b> ahorra dinero o disgustos.</span><span>Toca «Paso a paso» para ver el detalle.</span></p>
+      <div class="ess" id="ess"></div>
+    </div>
   </section>
 
   <section id="info" aria-labelledby="info-title" style="display:flex;flex-direction:column;gap:32px">
@@ -711,8 +756,9 @@ details ul { margin: 12px 0 0; padding-left: 1.1em; display: flex; flex-directio
         <div class="sos-card"><span class="what">Policía</span><span class="num">110</span><button type="button" class="copy" data-copy="110">Copiar</button></div>
         <div class="sos-card"><span class="what">Ambulancia y bomberos</span><span class="num">119</span><button type="button" class="copy" data-copy="119">Copiar</button></div>
         <div class="sos-card"><span class="what">Japan Visitor Hotline</span><span class="num">050-3816-2787</span><span class="sub">Ayuda al turista, 24 h, en inglés</span><button type="button" class="copy" data-copy="050-3816-2787">Copiar</button></div>
+        <div class="sos-card"><span class="what">Emergencia consular de España</span><span class="num">080-4368-2817</span><span class="sub">24 h, solo casos graves: pasaporte robado justo antes del vuelo, detención, accidente</span><button type="button" class="copy" data-copy="080-4368-2817">Copiar</button></div>
       </div>
-      <p class="note">Guardad antes de salir el teléfono de emergencia consular de la Embajada de España en Tokio.</p>
+      <p class="note"><span>Embajada de España: 1-3-29 Roppongi, Minato-ku, Tokio. Centralita 03-3583-8531, de lunes a viernes por la mañana y con cita.</span><span>Si os roban el pasaporte: denuncia en el kōban (policía) más cercano y luego a la Embajada.</span></p>
     </div>
   </section>
 
@@ -721,7 +767,7 @@ details ul { margin: 12px 0 0; padding-left: 1.1em; display: flex; flex-directio
       <summary>Fuentes consultadas</summary>
       <ul id="sources"></ul>
     </details>
-    <p>Actualizado el 5 de octubre de 2026. La versión editable está en el documento <a href="https://claude.ai/code/artifact/aafffd84-b21b-43b2-828b-6c9d06e4a5d1">Japón 2026 · Guía del viaje</a>.</p>
+    <p>Actualizado el 14 de octubre de 2026. La versión editable está en el documento <a href="https://claude.ai/code/artifact/aafffd84-b21b-43b2-828b-6c9d06e4a5d1">Japón 2026 · Guía del viaje</a>.</p>
   </footer>
 </main>
 
@@ -1029,10 +1075,171 @@ details ul { margin: 12px 0 0; padding-left: 1.1em; display: flex; flex-directio
       ["e7", "Tour nocturno a Daikoku, miércoles 11 nov a las 19:30. Avisad de que sois 6."],
       ["a4", "Cena de despedida para 6, jueves 12 nov."]
     ]},
+    { t: "Papeles y móvil", items: [
+      ["p1", "Pasaporte de los 6 en vigor y con foto de la página de datos en el móvil."],
+      ["p2", "Seguro de viaje contratado; póliza y teléfono de asistencia guardados."],
+      ["p3", "Visit Japan Web rellenado y QR capturado (cada uno el suyo)."],
+      ["p4", "eSIM comprada e instalada el 29 en casa."],
+      ["p5", "Revolut con tarjeta física, y una segunda tarjeta de otra red."],
+      ["p6", "Registro de Viajeros de Exteriores y app Safety Tips."],
+      ["p7", "Adaptador de enchufe tipo A y batería externa en la mochila."]
+    ]},
     { t: "Kodokan (Jose)", items: [
       ["k1", "Escribir a shido@kodokan.org para confirmar que el martes 10 nov hay práctica normal."],
       ["k2", "Meter el judogi en la maleta."]
     ]}
+  ];
+
+  var WHEN = [
+    ["Ya", "Pasaporte y seguro", "Mirad la caducidad del pasaporte de los 6 y contratad el seguro con asistencia médica."],
+    ["Hasta 25 oct", "eSIM, Revolut y Registro de Viajeros", "Comprad la eSIM, pedid la tarjeta física de Revolut si alguien no la tiene y apuntaos al Registro de Viajeros de Exteriores."],
+    ["26 – 28 oct", "Visit Japan Web", "Cada uno rellena el suyo y hace captura de los códigos QR. Como muy tarde, 6 horas antes de aterrizar."],
+    ["29 oct, en casa", "Móvil listo", "Instalad la eSIM con el wifi de casa (sin activarla), bajad los mapas sin conexión y cargad la batería externa. Va en cabina, nunca en la maleta facturada."],
+    ["30 oct, Kansai", "Al aterrizar", "Kiosco de Visit Japan Web, activar la eSIM, sacar yenes en el 7-Eleven y comprar o recargar la ICOCA."],
+    ["30 – 31 oct", "Último tax free «de siempre»", "Lo que compréis estos dos días lleva el descuento directo en caja. Los consumibles, sin abrir hasta salir de Japón."],
+    ["Desde 1 nov", "Tax free nuevo", "Se paga con IVA y se devuelve al salir. Guardad tickets y compras juntos y sin estrenar."],
+    ["13 nov, Haneda", "Llegar con margen", "Vuelo a las 21:00: estad en el aeropuerto hacia las 18:00. Primero el kiosco del tax free, después facturar."]
+  ];
+
+  var ESS = [
+    { id: "pasaporte", k: "旅券", t: "Pasaporte y entrada", tag: "Obligatorio", c: "must",
+      sum: "Con pasaporte español se entra sin visado hasta 90 días. Ni visado ni ETA: la autorización electrónica JESTA no llega hasta 2028.",
+      key: [
+        "Pasaporte **en vigor durante todo el viaje**. Japón no exige más, pero algunas aerolíneas piden margen: si caduca antes de mayo de 2027, renovadlo.",
+        "Hay que **llevarlo siempre encima**: es obligatorio por ley para turistas y os lo pedirán en el tax free, en Yamato y en los alojamientos."
+      ],
+      more: [
+        "En el control os toman **huellas y una foto**. Puede que os pregunten por el billete de vuelta y dónde os alojáis: llevad la reserva del Airbnb de Osaka a mano.",
+        "Haced una **foto de la página de datos** y guardadla en el móvil y en la nube. Si se pierde, la copia acelera el trámite en la Embajada.",
+        "La **tasa de salida** ha subido a 3.000 ¥ desde el 1 de julio de 2026. No se paga en el aeropuerto: va incluida en el billete (si lo comprasteis antes de julio, 1.000 ¥)."
+      ]},
+
+    { id: "vjw", k: "入国", t: "Visit Japan Web", tag: "Muy recomendable", c: "yes",
+      sum: "Formulario oficial y **gratuito** del Gobierno japonés que sustituye a los papeles del avión: tarjeta de desembarque y declaración de aduanas en un solo QR.",
+      key: [
+        "Web oficial: [services.digital.go.jp/en/visit-japan-web](https://services.digital.go.jp/en/visit-japan-web/). Ojo con webs que cobran por «tramitarlo»: es gratis.",
+        "Cada uno en **su propio móvil** y con su cuenta. Hacedlo entre el 26 y el 28 de octubre y **capturad los QR**: puede que no tengáis datos en inmigración."
+      ],
+      more: [
+        "**1. Cuenta:** correo y contraseña. **2. Datos del pasaporte:** se pueden escanear con la cámara. **3. Planificación de entrada:** fecha de llegada (30 oct), aeropuerto (Kansai), aerolínea y número de vuelo.",
+        "**4. Dirección en Japón:** la primera noche, el Airbnb de Shinsekai (está en «Alojamientos»). Basta con la primera dirección del viaje.",
+        "**5. Inmigración y aduanas:** las preguntas habituales (si traéis más de 1 millón de ¥ en efectivo, mercancía, alimentos…). Lo normal es contestar «No» a todo.",
+        "**En Kansai:** al bajar del avión, escanead pasaporte y QR en el **kiosco conjunto**; luego control de pasaportes (huellas y foto), maletas y la **puerta electrónica de aduanas** con reconocimiento facial.",
+        "Si algo falla, los formularios en papel siguen valiendo: os los dan en el avión."
+      ]},
+
+    { id: "seguro", k: "保険", t: "Seguro de viaje", tag: "Muy recomendable", c: "yes",
+      sum: "No es obligatorio para entrar, pero la Tarjeta Sanitaria Europea **no sirve en Japón** y no hay convenio con España: el turista paga el 100 % de la factura.",
+      key: [
+        "La JNTO publica casos reales: **7,5 millones de ¥** (≈ 42.000 €) por unas costillas rotas y **10 millones** (≈ 56.000 €) por un infarto con repatriación.",
+        "Buscad **gastos médicos de 500.000 € o más** (mejor ilimitados), **repatriación** y asistencia 24 h en español. Para 15 días, entre 30 y 80 € por persona."
+      ],
+      more: [
+        "**Comprobad que cubre:** hospitalización, ambulancia, medicamentos, regreso anticipado y, si queréis, equipaje y cancelación. Mirad las **exclusiones por terremoto o tifón**.",
+        "**Mejor sin franquicia y con pago directo:** en Japón muchos hospitales cobran al momento. Si la aseguradora paga directamente, no adelantáis nada.",
+        "El seguro de la tarjeta de crédito suele ser solo de accidentes o con límites bajos de gastos médicos. Leed la letra pequeña antes de contar con él.",
+        "Comparad en aseguradoras habituales para viajes desde España (IATI, Heymondo, Mondo, InterMundial…). Si lo contratáis los 6 a la vez, suele haber descuento de grupo.",
+        "**Guardad en el móvil** el número de póliza y el teléfono de asistencia. Si pasa algo, **llamad primero a la aseguradora**: os dicen a qué hospital ir."
+      ]},
+
+    { id: "dinero", k: "現金", t: "Dinero: Revolut y cajeros", tag: "Muy recomendable", c: "yes",
+      sum: "Se paga con tarjeta en casi todo, pero templos, ferias, free tours y bares pequeños van en efectivo. Revolut es la forma más barata de hacer las dos cosas.",
+      key: [
+        "**Revolut Estándar (gratis):** pagos con tarjeta en yenes sin comisión entre semana. Cajeros fuera de España: **gratis hasta 200 € o 5 retiradas al mes**; después, 2 % (mínimo 1 €).",
+        "En cajero o datáfono, **pagad siempre en yenes (JPY)**. Si la máquina ofrece cobrar en euros, rechazadlo: esa «conversión» lleva un 3–8 % de recargo."
+      ],
+      more: [
+        "**El truco del fin de semana:** Revolut cobra un 1 % extra al cambiar divisa con el mercado cerrado (del viernes por la noche al domingo por la noche). Pasad euros a yenes **en la app un día entre semana** y pagad desde el saldo en yenes: así no hay recargo.",
+        "El cambio sin comisión tiene un **límite mensual** según el plan; mirad el vuestro en la app antes de salir. Si un mes os pasáis, el recargo es pequeño.",
+        "**Dónde sacar:** los cajeros de **7-Eleven (Seven Bank)** aceptan tarjetas extranjeras, tienen menú en inglés y abren 24 h. También los de Japan Post y Lawson. Los de bancos japoneses, casi nunca.",
+        "El cajero japonés cobra **su propia comisión** (110–220 ¥), aparte de la de Revolut. Sacad poco a menudo y en cantidades grandes: unos **35.000 ¥ ≈ 200 €** de una vez aprovechan todo el tramo gratis.",
+        "¿Cuánto efectivo? Calculad unos **3.000–5.000 ¥ al día** por persona para templos, puestos de comida y bares. El resto, con tarjeta o con la Suica/ICOCA.",
+        "Llevad la **tarjeta física** de Revolut y **una segunda tarjeta de otra red** (Visa si Revolut es Mastercard o al revés) por si una falla.",
+        "No hay propinas: dejarla puede incluso incomodar. Se paga dejando el dinero en la bandejita, no en la mano."
+      ]},
+
+    { id: "esim", k: "通信", t: "eSIM e internet", tag: "Muy recomendable", c: "yes",
+      sum: "Una eSIM es una tarjeta SIM virtual: la compráis online, os llega un QR y el móvil tiene datos en Japón sin cambiar vuestra SIM española.",
+      key: [
+        "Antes de comprar, comprobad que el móvil **admite eSIM y está libre**: Ajustes → General → Información (iPhone) o Ajustes → Conexiones → SIM (Android).",
+        "Con **10–20 GB para 15 días** vais sobrados usando mapas, WhatsApp y redes. Si alguien ve muchos vídeos, plan ilimitado."
+      ],
+      more: [
+        "**Cómo se instala:** escaneáis el QR o la instaláis desde la app del proveedor **el 29 en casa, con wifi**. Al aterrizar, activáis esa línea para datos y el **roaming de datos** de la eSIM (es necesario, aunque no os cobra nada).",
+        "**La SIM española:** dejadla encendida para recibir llamadas y **SMS del banco** (recibirlos suele ser gratis), pero con los **datos móviles apagados** en esa línea. Si no, el roaming fuera de la UE os puede costar muy caro.",
+        "**Proveedores:** Ubigi va con la red de **NTT Docomo**, la que mejor cubre Hakone y Nikko. Airalo usa SoftBank/KDDI: bien en ciudades, algo peor en montaña. Holafly y similares ofrecen datos ilimitados por algo más.",
+        "La eSIM de turista es **solo de datos**: no tiene número japonés. Para llamar (restaurantes, taxi), usad WhatsApp o pedid ayuda en el alojamiento.",
+        "Si a alguien se le acaban los datos, otro puede **compartir conexión** (punto de acceso) mientras compra una recarga.",
+        "Siendo 6, no compensa el pocket wifi: obliga a ir juntos y a cargar otro aparato."
+      ]},
+
+    { id: "taxfree", k: "免税", t: "Tax free: cambia el 1 de noviembre", tag: "Muy recomendable", c: "yes",
+      sum: "Japón cambia el sistema en pleno viaje. Hasta el 31 de octubre, el 10 % se descuenta en caja. **Desde el 1 de noviembre** se paga con IVA y se devuelve al salir del país.",
+      key: [
+        "Sigue el mínimo de **5.000 ¥ sin impuestos por tienda y día**, y hay que **enseñar el pasaporte** físico en cada compra.",
+        "En Haneda, el **kiosco del tax free va antes de facturar**. Si metéis las compras en la maleta facturada sin pasar por él, no hay devolución."
+      ],
+      more: [
+        "**30 y 31 de octubre (Osaka):** sistema antiguo. Pagáis sin el 10 % en caja. Lo que sea comida, cosmética o bebida va en bolsa sellada y **no se puede abrir** hasta salir de Japón.",
+        "**Desde el 1 de noviembre:** pagáis el precio completo y la tienda registra la compra en vuestro pasaporte. Preguntad en caja **cómo os devuelven el dinero** (a la tarjeta, en efectivo o por app): depende de cada tienda.",
+        "Algunas tiendas y operadores **descuentan una comisión** de gestión (en torno al 1,5–2 %). Recuperáis algo más del 8 %, no el 10 % entero.",
+        "**Novedad buena:** ya no hay bolsas selladas ni tope de 500.000 ¥ en consumibles. Pero lo que **gastéis o comáis en Japón** ya no tiene devolución: lo que se declara, tiene que salir del país.",
+        "**El 13 en Haneda:** en el vestíbulo de salidas, antes de facturar, escaneáis el pasaporte en el kiosco. **Verde:** listo. **Rojo:** hay que enseñar las compras en el puesto de aduanas. Por eso, compras y tickets **juntos y a mano**.",
+        "En Haneda también se puede hacer desde el móvil con Visit Japan Web, conectado al wifi de la zona de salidas (antes del control de seguridad).",
+        "Las compras de antes del 1 de noviembre no requieren paso por el kiosco, pero aduanas puede revisarlas: no abráis las bolsas selladas."
+      ]},
+
+    { id: "suica", k: "交通", t: "Suica o ICOCA en el móvil", tag: "Útil", c: "",
+      sum: "La tarjeta de transporte sirve para metro, trenes locales, buses, konbinis y taquillas. En iPhone puede ir dentro de la Cartera, sin tarjeta física.",
+      key: [
+        "**iPhone:** Cartera → + → Tarjeta de transporte → Suica (o PASMO/ICOCA). Se recarga con Apple Pay.",
+        "**Android:** casi ningún modelo europeo la admite. Comprad una ICOCA física en el aeropuerto de Kansai (en la estación JR) y recargadla en las máquinas de las estaciones, solo en efectivo."
+      ],
+      more: [
+        "Algunas Visa extranjeras fallan al recargar con Apple Pay. Si pasa, probad con una Mastercard o recargad en la máquina de la estación con efectivo.",
+        "Suica, PASMO e ICOCA valen en todo el país: la de Kansai sirve también en Tokio.",
+        "No vale para el Shinkansen ni los expresos con plaza reservada: esos van con su billete (ver «Pases y billetes»).",
+        "Dejad siempre **un mínimo de saldo** (unos 1.000 ¥): si al salir no os llega, toca pasar por la máquina de ajuste de tarifa."
+      ]},
+
+    { id: "medicinas", k: "薬", t: "Medicamentos", tag: "Obligatorio", c: "must",
+      sum: "Japón es muy estricto con algunos principios activos que en España se venden sin receta. Si algo está prohibido, se confisca en la aduana y puede acabar en multa.",
+      key: [
+        "**Prohibidos:** inhaladores Vicks y antigripales o descongestivos con **pseudoefedrina** (miradlo en el prospecto), y cualquier producto con CBD o THC.",
+        "Sin trámites se puede llevar hasta **1 mes** de medicamentos con receta y **2 meses** de los que se venden sin receta, en su **envase original**."
+      ],
+      more: [
+        "Para medicación con receta, llevad el **informe o la receta** del médico, a ser posible en inglés, junto al envase.",
+        "Si alguien necesita más cantidad, o algo con estupefacientes o psicotrópicos (algunos ansiolíticos, analgésicos fuertes o medicación para el TDAH), hay que pedir antes un permiso: el **Yunyu Kakunin-sho**. Consultad la web del Ministerio de Sanidad japonés.",
+        "Botiquín básico que sí entra: paracetamol, ibuprofeno, antidiarreico, tiritas, crema para rozaduras (mucho caminar) y algo para el mareo en barco o bus de montaña.",
+        "En las farmacias japonesas (薬局, yakkyoku) hay de casi todo, pero los prospectos están en japonés. Usad la cámara del traductor de Google."
+      ]},
+
+    { id: "enchufes", k: "電源", t: "Enchufes y electricidad", tag: "Útil", c: "",
+      sum: "Enchufes de **tipo A** (dos patas planas, como en EE. UU.) y corriente de **100 V**. Hace falta adaptador; el transformador, casi nunca.",
+      key: [
+        "Móviles, portátiles y cámaras admiten 100–240 V: con un **adaptador tipo A** basta. Mejor uno con varios USB: 6 personas y pocos enchufes.",
+        "Secadores, planchas del pelo y aparatos españoles de 230 V **no** funcionan bien: usad los del alojamiento."
+      ],
+      more: [
+        "Muchos enchufes japoneses son de **dos patas sin toma de tierra**: los cargadores con tercera pata redonda necesitan un adaptador que la permita.",
+        "Las **baterías externas** van siempre en el equipaje de mano, nunca facturadas (ni en el envío con Yamato).",
+        "Los konbinis venden cargadores y cables por si se os olvida algo."
+      ]},
+
+    { id: "apps", k: "アプリ", t: "Apps y seguridad", tag: "Útil", c: "",
+      sum: "Unas pocas apps que resuelven casi todo, y dos registros que no cuestan nada y ayudan si pasa algo serio.",
+      key: [
+        "**Registro de Viajeros** del Ministerio de Exteriores: si hay un terremoto o una emergencia, la Embajada sabe que estáis allí.",
+        "**Safety Tips** (de la Agencia de Turismo de Japón): alertas de terremoto, tsunami y tifón en inglés. Activad las notificaciones."
+      ],
+      more: [
+        "**Google Maps:** horarios de trenes, andenes y salidas de estación. Descargad sin conexión Osaka, Kioto, Hakone y Tokio.",
+        "**Google Traductor:** la cámara traduce cartas, carteles y prospectos. Descargad el japonés sin conexión.",
+        "**GO:** la app de taxis más usada. Permite pedir taxis grandes para 6.",
+        "**WhatsApp:** con la eSIM funciona igual que en España. Para llamar a un número japonés, que lo haga el alojamiento o el restaurante.",
+        "**Terremotos:** si tiembla, alejaos de ventanas y estanterías y seguid a la gente. Los edificios están preparados; casi siempre es un susto."
+      ]}
   ];
 
   var PASSES = [
@@ -1053,12 +1260,12 @@ details ul { margin: 12px 0 0; padding-left: 1.1em; display: flex; flex-directio
       "**Free tours:** duran 2 horas y se paga la voluntad. Merecen la pena en Kioto (Gion) y Tokio (Asakusa); en Osaka no compensan."
     ]},
     { t: "Dinero y compras", items: [
-      "**Tax free nuevo desde el 1 de noviembre:** se paga el precio con el 10 % de IVA, se enseña el pasaporte al comprar y el dinero se devuelve al salir de Japón, tras pasar por la aduana.",
-      "No abráis lo comprado y llevadlo a mano en el aeropuerto. Lo que compréis el 30 y el 31 de octubre aún lleva el descuento directo en caja.",
-      "Casi todo se paga con tarjeta, pero templos, puestos de feria, free tours y bares pequeños van en efectivo. Los cajeros de 7-Eleven aceptan tarjetas extranjeras."
+      "**Tax free nuevo desde el 1 de noviembre:** se paga el precio con el 10 % de IVA y se devuelve al salir, tras pasar por el kiosco de Haneda antes de facturar. El detalle, en «Esencial».",
+      "Lo que compréis el 30 y el 31 de octubre aún lleva el descuento directo en caja.",
+      "Casi todo se paga con tarjeta, pero templos, puestos de feria, free tours y bares pequeños van en efectivo. Sacad en los cajeros de 7-Eleven y pagad siempre en yenes."
     ]},
     { t: "Costumbres y clima", items: [
-      "**Internet:** una eSIM de datos para cada uno.",
+      "**Internet:** una eSIM de datos para cada uno, instalada antes de salir.",
       "**Luz:** anochece sobre las 16:40 en Tokio y las 17:15 en Hiroshima. Lo de aire libre, por la mañana.",
       "**Ropa:** días de 12 a 20 °C y noches frías en Hakone, cerca de 5 °C. Capas y zapatos fáciles de quitar.",
       "**Normas:** no se come andando por la calle, casi no hay papeleras (llevad una bolsa) y en trenes y metro, silencio."
@@ -1116,6 +1323,25 @@ details ul { margin: 12px 0 0; padding-left: 1.1em; display: flex; flex-directio
     ["Museo Ghibli: cierre en noviembre de 2026", "https://watabi.org/en/articles/ghibli-museum-guide"],
     ["Retirada del Gundam de Odaiba", "https://www.tokyoweekender.com/japan-life/news-and-opinion/tokyo-unicorn-gundam-statue-display-to-end-in-august/"],
     ["Nuevo sistema tax free", "https://en.japantravel.com/article/tax-free-shopping-in-japan-2026-changes/72305"],
+    ["Tax free: preguntas frecuentes del nuevo sistema, Agencia de Turismo de Japón", "https://www.mlit.go.jp/kankocho/tax-free/page01_000001_00027.html"],
+    ["Tax free: devolución en el aeropuerto de Kansai, Aduanas de Japón", "https://www.customs.go.jp/osaka/about/images/kix_tax%20refund_en.pdf"],
+    ["Tax free: comisiones y forma de devolución", "https://kaidashi.net/en/guides/tax-free-shopping-japan/"],
+    ["Visit Japan Web (web oficial)", "https://services.digital.go.jp/en/visit-japan-web/"],
+    ["Llegadas internacionales en Kansai", "https://www.kansai-airport.or.jp/en/node/253"],
+    ["Guía de Visit Japan Web 2026", "https://blog.wego.com/visit-japan-web/"],
+    ["JESTA: calendario de la autorización electrónica", "https://visasnews.com/en/japans-parliament-passes-law-paving-the-way-for-jesta/"],
+    ["Visado y requisitos de entrada para españoles", "https://www.yomeanimo.com/visado-japon-para-espanoles"],
+    ["Tasa de salida de 3.000 ¥ desde julio de 2026", "https://www.travelvoice.jp/english/the-japanese-ruling-parties-specify-a-rise-in-departure-tax-to-3-000-yen-in-the-tax-reform-outline-for-fy2026"],
+    ["Embajada de España en Tokio: contacto y emergencia consular", "https://www.exteriores.gob.es/Embajadas/tokio/es/Embajada/Paginas/Horario,-localizaci%C3%B3n-y-contacto.aspx"],
+    ["Coste de un hospital en Japón para turistas", "https://japonpedia.com/cuanto-cuesta-hospital-japon/"],
+    ["Seguro de viaje a Japón: coberturas", "https://hellosafe.com/es/travel-insurance/to-japan"],
+    ["Revolut: comisiones del plan Estándar en España", "https://www.revolut.com/es-ES/legal/standard-fees/"],
+    ["Revolut en Japón: recargo de fin de semana", "https://www.japan-travel-kit.com/guides/money/revolut-card-japan"],
+    ["Cajeros en Japón para tarjetas extranjeras", "https://asocialnomad.com/japan/atms-fees-japan/"],
+    ["eSIM para Japón: redes y compatibilidad", "https://www.japan-wireless.com/column/best-esim-japan/"],
+    ["Airalo y Ubigi en Japón", "https://whereandwander.com/regional-showdown-airalo-vs-ubigi-best-esim-in-japan"],
+    ["Suica en el móvil para turistas", "https://voyapon.com/es/suica-mobile-japon/"],
+    ["Medicamentos que se pueden llevar a Japón", "https://en.japantravel.com/guide/bringing-medicines-into-japan/58063"],
     ["Kyoto Samurai & Ninja Museum", "https://kupi.com/en-ae/explore/japan/kyoto/kyoto-samurai-and-ninja-museum"],
     ["Experiencias de samurái en Kioto, Klook", "https://www.klook.com/en-US/blog/kyoto-samurai-experience/"],
     ["Gion Corner", "https://www.ticketstodo.com/kyoto/gion-corner-tickets"],
@@ -1165,6 +1391,9 @@ details ul { margin: 12px 0 0; padding-left: 1.1em; display: flex; flex-directio
     });
   }
   function fmt(s) { return esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>"); }
+  function fmtl(s) {
+    return fmt(s).replace(/\[([^\]]+)\]\((https:[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+  }
   function pad(n) { return n < 10 ? "0" + n : String(n); }
 
   function store(key, val) {
@@ -1374,6 +1603,20 @@ details ul { margin: 12px 0 0; padding-left: 1.1em; display: flex; flex-directio
   document.getElementById("ship-notes").innerHTML = SHIPNOTES.map(function (t) { return '<li>' + fmt(t) + '</li>'; }).join("");
 
   // Info práctica
+  document.getElementById("when").innerHTML = WHEN.map(function (w) {
+    return '<li><span class="w-date">' + esc(w[0]) + '</span><span class="w-what"><b>' + esc(w[1]) + '</b><span>' + fmt(w[2]) + '</span></span></li>';
+  }).join("");
+
+  document.getElementById("ess").innerHTML = ESS.map(function (e) {
+    return '<article class="ess-card" id="' + e.id + '">' +
+      '<div class="ess-head"><span class="e-k" lang="ja" aria-hidden="true">' + esc(e.k) + '</span><h4>' + esc(e.t) + '</h4>' +
+      '<span class="verdict ' + e.c + '">' + esc(e.tag) + '</span></div>' +
+      '<p class="ess-sum">' + fmtl(e.sum) + '</p>' +
+      '<ul class="ess-key">' + e.key.map(function (t) { return '<li>' + fmtl(t) + '</li>'; }).join("") + '</ul>' +
+      '<details><summary>Paso a paso</summary><ul>' + e.more.map(function (t) { return '<li>' + fmtl(t) + '</li>'; }).join("") + '</ul></details>' +
+    '</article>';
+  }).join("");
+
   document.getElementById("passes").innerHTML = PASSES.map(function (p) {
     return '<li class="pass"><span class="p-name">' + esc(p.name) + '</span>' +
       '<span class="p-right"><span class="p-price">' + esc(p.price) + '</span><span class="verdict ' + p.c + '">' + esc(p.v) + '</span></span>' +

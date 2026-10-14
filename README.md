@@ -80,6 +80,7 @@ La idea de diseño: **el viaje es una línea de tren**. Cada día es una parada,
 - **✅ Reservas pendientes** — una checklist que se guarda en el propio dispositivo.
 - **🏠 Direcciones para el taxi** — en japonés, con botón de **copiar** y enlace directo a Google Maps.
 - **🧳 Envío de maletas** — los dos trayectos con Yamato (TA-Q-BIN), paso a paso.
+- **🛂 Esencial** — pasaporte, Visit Japan Web, seguro, Revolut y cajeros, eSIM, tax free nuevo (1 nov), Suica en el móvil, medicamentos y enchufes, con un calendario de qué hacer y cuándo.
 - **💴 Pases y billetes** — qué compensa y qué no, con veredicto.
 - **🗣️ Frases útiles** — en español, japonés y romaji, para enseñar en la pantalla.
 - **🆘 Emergencias** — 110, 119 y la Japan Visitor Hotline, listos para copiar.
@@ -135,6 +136,7 @@ Todo el contenido vive en arrays al principio del `<script>`, así que editar el
 | `STAYS` | Alojamientos con dirección en japonés y búsqueda de Maps |
 | `SHIP` / `SHIPNOTES` | Envíos de maletas con Yamato |
 | `CHECKS` | Checklist de reservas pendientes |
+| `WHEN` / `ESS` | Calendario y fichas de la sección «Esencial» (papeles, dinero, móvil) |
 | `PASSES` | Pases y billetes con precio y veredicto |
 | `TIPCOLS` | Trucos para el día a día |
 | `PHRASES` | Frases en español, japonés y romaji |
@@ -183,6 +185,6 @@ La versión editable del contenido está en el documento [Japón 2026 · Guía d
 
 **いってきます!** 🍁
 
-<sub>Actualizado el 5 de octubre de 2026</sub>
+<sub>Actualizado el 14 de octubre de 2026</sub>
 
 </div>
