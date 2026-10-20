@@ -595,6 +595,44 @@ button { font: inherit; color: inherit; }
 .ship dd { margin: 0; }
 .ship-notes { margin: 0; padding-left: 1.1em; display: flex; flex-direction: column; gap: 8px; }
 
+/* Trayectos */
+.legs { background: var(--surface); border-radius: var(--radius); padding: 12px 16px; }
+.legs > summary { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: var(--s-0); list-style: none; }
+.legs > summary::-webkit-details-marker { display: none; }
+.legs > summary::before { content: "▸"; color: var(--accent); transition: transform 0.15s; }
+.legs[open] > summary::before { transform: rotate(90deg); }
+.legs-chips { display: inline-flex; flex-wrap: wrap; gap: 4px; margin-left: auto; }
+.legs-chips .lb { width: 26px; height: 26px; border-width: 3px; }
+.legs-chips .lb.wide { width: auto; min-width: 26px; }
+.legs-chips .lb b { font-size: 0.625rem; }
+.legs ol { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-direction: column; }
+.leg { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 12px; position: relative; padding-bottom: 14px; }
+.leg:not(:last-child)::before { content: ""; position: absolute; left: 19px; top: 40px; bottom: 2px; width: 2px; background: var(--rule); }
+.leg-body { display: flex; flex-direction: column; gap: 2px; min-width: 0; padding-top: 2px; }
+.leg-line { font-family: var(--f-mono); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 8px; }
+.leg-w { color: var(--accent); }
+.leg-ab { font-weight: 700; overflow-wrap: anywhere; }
+.leg-n { font-size: var(--s-1); color: var(--muted); }
+.leg-n strong { color: var(--ink); }
+.leg-foot { font-size: var(--s-1); color: var(--muted); border-top: 1px solid var(--rule); padding-top: 10px; margin-top: 2px; }
+.lb {
+  --lc: var(--muted);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 5px solid var(--lc);
+  background: #FFFFFF;
+  color: #16191D;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.lb.wide { border-radius: 10px; }
+.lb.plain { border-style: dashed; border-width: 2px; background: var(--soft); color: var(--muted); }
+.lb b { font-family: var(--f-mono); font-weight: 600; font-size: 0.8125rem; line-height: 1; }
+.lb b[lang="ja"] { font-family: var(--f-display); font-weight: 900; }
+
 /* Imprescindible */
 .when { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0; background: var(--surface); border-radius: var(--radius); padding: 6px 18px; }
 .when li { display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--rule); }
@@ -632,6 +670,7 @@ details ul { margin: 12px 0 0; padding-left: 1.1em; display: flex; flex-directio
 }
 @media (prefers-reduced-motion: reduce) {
   .st-dot { transition: none; }
+  .legs > summary::before { transition: none; }
 }
 </style>
 
@@ -767,7 +806,7 @@ details ul { margin: 12px 0 0; padding-left: 1.1em; display: flex; flex-directio
       <summary>Fuentes consultadas</summary>
       <ul id="sources"></ul>
     </details>
-    <p>Actualizado el 14 de octubre de 2026. La versión editable está en el documento <a href="https://claude.ai/code/artifact/aafffd84-b21b-43b2-828b-6c9d06e4a5d1">Japón 2026 · Guía del viaje</a>.</p>
+    <p>Actualizado el 20 de octubre de 2026. La versión editable está en el documento <a href="https://claude.ai/code/artifact/aafffd84-b21b-43b2-828b-6c9d06e4a5d1">Japón 2026 · Guía del viaje</a>.</p>
   </footer>
 </main>
 
@@ -983,7 +1022,7 @@ details ul { margin: 12px 0 0; padding-left: 1.1em; display: flex; flex-directio
       n: 15, iso: "2026-11-13", dow: "Vie", d: "13", m: "nov", city: "tokyo",
       kanji: "両国", romaji: "Ryogoku", short: "Vuelta", title: "Museo Edo-Tokio y vuelo de vuelta", badges: ["Vuelo 21:00"],
       idea: "El vuelo sale de Haneda por la noche: hay medio día para los museos de Ryogoku, al lado de casa.",
-      logi: [["Vuelo", "Haneda 21:00 → Madrid 7:25 del sábado 14"], ["Transporte", "Taxis hasta Ryogoku con las maletas; de allí a Haneda en tren (~45 min, con transbordo al monorraíl)"], ["Maletas", "En las consignas de la estación de Ryogoku"]],
+      logi: [["Vuelo", "Haneda 21:00 → Madrid 7:25 del sábado 14"], ["Transporte", "Taxis hasta Ryogoku con las maletas; de allí a Haneda en tren (~50 min, con un transbordo en Asakusabashi)"], ["Maletas", "En las consignas de la estación de Ryogoku"]],
       blocks: [
         { k: "morning", l: "Mañana", place: "Ryogoku", items: ["Check-out y taxis a Ryogoku (~15 min). Maletas a las consignas de la estación.", "Museo Edo-Tokio, reabierto en 2026: el Tokio de época Edo a escala, armaduras de samurái y grabados de Hiroshige. Abre a las 9:30 y cuesta 800 ¥.", "Al lado, el Museo de la Espada Japonesa, también desde las 9:30."] },
         { k: "lunch", l: "Comida", place: "Ryogoku", items: ["Chanko nabe, el guiso de los luchadores de sumo, típico del barrio."] },
@@ -994,6 +1033,186 @@ details ul { margin: 12px 0 0; padding-left: 1.1em; display: flex; flex-directio
       tips: ["Últimos yenes: los konbinis y tiendas del aeropuerto son el mejor sitio para gastarlos."]
     }
   ];
+
+  // Líneas: código y color como en los carteles de las estaciones.
+  var LINES = {
+    haruka: { c: "S", n: "JR Kansai Airport · Haruka", col: "#0072BC" },
+    loop: { c: "O", n: "JR Osaka Loop", col: "#E5512B" },
+    yamatoji: { c: "Q", n: "JR Yamatoji", col: "#00A28E" },
+    jrnara: { c: "D", n: "JR Nara", col: "#A6772C" },
+    sagano: { c: "E", n: "JR Sagano", col: "#8E3C8F" },
+    sanyo: { c: "JR", n: "JR Sanyo", col: "#0072BC" },
+    shinkansen: { c: "新", n: "Shinkansen", col: "#1D3F8F" },
+    midosuji: { c: "M", n: "Metro Midosuji", col: "#E5171F" },
+    sakaisuji: { c: "K", n: "Metro Sakaisuji", col: "#814721" },
+    chuo: { c: "C", n: "Metro Chuo", col: "#019A66" },
+    tanimachi: { c: "T", n: "Metro Tanimachi", col: "#522886" },
+    hiroden: { c: "電", n: "Tranvía de Hiroshima", col: "#2E8B57" },
+    ferry: { c: "船", n: "Ferry JR", col: "#3B7DBF" },
+    karasuma: { c: "K", n: "Metro Karasuma", col: "#1E9A53" },
+    hankyu: { c: "HK", n: "Hankyu Kyoto", col: "#7A1F2B" },
+    randen: { c: "嵐", n: "Tranvía Randen", col: "#6B2C91" },
+    tozan: { c: "OH", n: "Tren Hakone Tozan", col: "#E2521D" },
+    boat: { c: "船", n: "Barco del lago Ashi", col: "#3B7DBF" },
+    ropeway: { c: "索", n: "Teleférico de Hakone", col: "#D23B2B" },
+    cable: { c: "鋼", n: "Funicular de Hakone", col: "#E2521D" },
+    romancecar: { c: "OH", n: "Odakyu · Romancecar", col: "#2288CC" },
+    tobu: { c: "TS", n: "Tobu Skytree", col: "#0F6CC3" },
+    tobunikko: { c: "TN", n: "Tobu Nikko", col: "#F08300" },
+    hanzomon: { c: "Z", n: "Metro Hanzomon", col: "#8F76D6" },
+    hibiya: { c: "H", n: "Metro Hibiya", col: "#9CAEB7" },
+    chiyoda: { c: "C", n: "Metro Chiyoda", col: "#00BB85" },
+    ginza: { c: "G", n: "Metro Ginza", col: "#F39700" },
+    yurakucho: { c: "Y", n: "Metro Yurakucho", col: "#C1A470" },
+    asakusa: { c: "A", n: "Toei Asakusa", col: "#E85298" },
+    oedo: { c: "E", n: "Toei Oedo", col: "#B6007A" },
+    shinjuku: { c: "S", n: "Toei Shinjuku", col: "#6CBB5A" },
+    yurikamome: { c: "U", n: "Yurikamome", col: "#1B5FAA" },
+    yamanote: { c: "JY", n: "JR Yamanote", col: "#80C241" },
+    chuosobu: { c: "JB", n: "JR Chuo-Sobu", col: "#FFD400" },
+    taxi: { c: "タ", n: "Taxi", col: "" },
+    walk: { c: "歩", n: "A pie", col: "" },
+    bus: { c: "バ", n: "Autobús", col: "" }
+  };
+
+  // Trayectos por día: [cuándo, línea, desde, hasta, nota].
+  var ROUTES = {
+    1: [
+      ["Al llegar", "haruka", "Kansai Airport", "Tennoji", "Expreso limitado Haruka, ~35 min. En el pase."],
+      ["", "loop", "Tennoji", "Shin-Imamiya", "1 parada, en el pase. Luego ~10 min a pie hasta casa."],
+      ["Tarde", "walk", "Casa", "Abeno Harukas", "~15 min por el parque de Tennoji."]
+    ],
+    2: [
+      ["Mañana", "sakaisuji", "Ebisucho", "Sakaisuji-Hommachi", "3 paradas."],
+      ["", "chuo", "Sakaisuji-Hommachi", "Tanimachi 4-chome", "1 parada. El parque del castillo, a ~10 min a pie."],
+      ["Mediodía", "tanimachi", "Tanimachi 4-chome", "Higashi-Umeda", "3 paradas. Para la opción B, una más: Nakazakicho."],
+      ["Tarde", "midosuji", "Umeda", "Namba", "4 paradas. Kuromon, a ~10 min a pie."],
+      ["Noche", "midosuji", "Namba", "Dobutsuen-mae", "2 paradas. Todo el metro de hoy entra en el Amazing Pass."]
+    ],
+    3: [
+      ["9:00", "walk", "Casa", "Yamato Kizu", "~1 km. La oficina está junto al metro Daikokucho."],
+      ["", "midosuji", "Daikokucho", "Shin-Osaka", "8 paradas, ~20 min. **No entra en el pase:** con la ICOCA."],
+      ["", "shinkansen", "Shin-Osaka", "Himeji", "Sanyo Shinkansen, ~30 min, asiento reservado."],
+      ["Mediodía", "shinkansen", "Himeji", "Hiroshima", "~1 h."],
+      ["", "hiroden", "Hiroshima", "Genbaku Dome-mae", "~15 min. Mirad el destino en el panel. **No entra en el pase:** con la ICOCA."],
+      ["Atardecer", "hiroden", "Genbaku Dome-mae", "Hiroshima", "De vuelta a la estación, ~15 min."],
+      ["", "sanyo", "Hiroshima", "Miyajimaguchi", "Tren local hacia Iwakuni, ~30 min. En el pase."],
+      ["", "ferry", "Miyajimaguchi", "Miyajima", "10 min. En el pase, más 100 ¥ de tasa."],
+      ["Noche", "ferry", "Miyajima", "Miyajimaguchi", "Y tren JR Sanyo de vuelta a Hiroshima, ~40 min en total."],
+      ["", "shinkansen", "Hiroshima", "Shin-Osaka", "~1 h 30 min."],
+      ["", "midosuji", "Shin-Osaka", "Dobutsuen-mae", "9 paradas, ~20 min. Con la ICOCA."]
+    ],
+    4: [
+      ["Primera hora", "yamatoji", "Shin-Imamiya", "Nara", "Yamatoji Rapid, ~40 min. En el pase. Si el siguiente no es directo, una parada hasta Tennoji y allí transbordo."],
+      ["Tarde", "jrnara", "Nara", "Kioto", "Miyakoji Rapid, ~45 min. En el pase. Uji (opción A) está en esta línea."],
+      ["", "karasuma", "Kioto", "Gojo", "1 parada. Con la ICOCA."],
+      ["Opción B", "karasuma", "Gojo", "Karasuma-Oike", "2 paradas. El Museo del Manga está en la salida."],
+      ["Noche", "karasuma", "Gojo", "Shijo", "1 parada."],
+      ["", "hankyu", "Karasuma", "Kyoto-Kawaramachi", "1 parada; se cambia sin salir a la calle. Después, ~10 min a pie cruzando el río hasta Gion."],
+      ["Vuelta", "taxi", "Gion", "Casa", "Dos taxis, ~10 min."]
+    ],
+    5: [
+      ["Amanecer", "walk", "Casa", "Tambaguchi", "~15 min. O dos taxis directos a Arashiyama."],
+      ["", "sagano", "Tambaguchi", "Saga-Arashiyama", "~15 min. Último día del pase. El bambú, a ~10 min a pie."],
+      ["Tarde", "randen", "Arashiyama", "Katabiranotsuji", "Línea Arashiyama. Con la ICOCA."],
+      ["", "randen", "Katabiranotsuji", "Ryoanji", "Transbordo a la línea Kitano. ~25 min desde Arashiyama. El templo, a ~7 min a pie."],
+      ["Opción", "randen", "Katabiranotsuji", "Satsueisho-mae", "Para Toei Uzumasa Eigamura, también en la línea Kitano."],
+      ["", "walk", "Ryoan-ji", "Kinkaku-ji", "~20 min a pie, o taxi."],
+      ["Noche", "taxi", "Kinkaku-ji", "Pontocho", "Dos taxis, ~25 min. En bus (205), más de 40."],
+      ["Vuelta", "walk", "Pontocho", "Casa", "~25 min, o dos taxis."]
+    ],
+    6: [
+      ["Amanecer", "karasuma", "Gojo", "Kioto", "1 parada. El pase ya ha caducado: todo con la ICOCA."],
+      ["", "jrnara", "Kioto", "Inari", "2 paradas, ~5 min. El santuario está enfrente."],
+      ["Mañana", "jrnara", "Inari", "Tofukuji", "1 parada de vuelta."],
+      ["", "taxi", "Tofuku-ji", "Kiyomizu-dera", "Dos taxis, ~10 min. A pie, ~35 min cuesta arriba."],
+      ["Opción A", "walk", "Pagoda Yasaka", "Nanzen-ji", "~30 min por el parque Maruyama, o dos taxis."],
+      ["", "walk", "Nanzen-ji", "Ginkaku-ji", "Camino del Filósofo, ~30 min."],
+      ["Noche", "taxi", "Ginkaku-ji", "Gion Corner", "Dos taxis, ~15 min. En bus (203), ~30 min."],
+      ["Vuelta", "taxi", "Gion", "Casa", "Dos taxis, ~10 min."]
+    ],
+    7: [
+      ["Primera hora", "walk", "Casa", "Yamato Gojo Muromachi", "Junto al metro Gojo."],
+      ["", "karasuma", "Gojo", "Shijo", "1 parada. El museo, a ~7 min a pie junto a Nishiki."],
+      ["Mediodía", "karasuma", "Shijo", "Kioto", "2 paradas."],
+      ["", "shinkansen", "Kioto", "Odawara", "Tokaido Shinkansen **Hikari** (el Nozomi no para), ~2 h."],
+      ["", "tozan", "Odawara", "Hakone-Yumoto", "~15 min. Ya con el Hakone Freepass."],
+      ["Tarde", "bus", "Hakone-Yumoto", "Hotel", "Bus de la zona termal, 10 min y 200 ¥. O 20 min a pie."]
+    ],
+    8: [
+      ["Mañana", "bus", "Hakone-Yumoto", "Moto-Hakone-ko", "Bus Hakone Tozan, ~40 min."],
+      ["", "boat", "Moto-Hakone-ko", "Togendai-ko", "~40 min por el lago."],
+      ["Mediodía", "ropeway", "Togendai", "Owakudani", "~25 min."],
+      ["", "ropeway", "Owakudani", "Sounzan", "~10 min."],
+      ["Tarde", "cable", "Sounzan", "Gora", "~10 min."],
+      ["", "tozan", "Gora", "Chokoku-no-Mori", "1 parada: el Museo al Aire Libre está al lado. O 10 min a pie."],
+      ["", "tozan", "Chokoku-no-Mori", "Hakone-Yumoto", "~35 min de zigzag. Todo el día, en el Freepass."],
+      ["Opción", "bus", "Togendai", "Sengokuhara", "~15 min. En el Freepass."]
+    ],
+    9: [
+      ["Mediodía", "romancecar", "Hakone-Yumoto", "Kita-Senju", "Romancecar Metro Hakone, ~2 h, asiento reservado. Billete aparte del Freepass."],
+      ["", "tobu", "Kita-Senju", "Kanegafuchi", "3 paradas en tren local (普通). Con la Suica."],
+      ["Plan B", "romancecar", "Hakone-Yumoto", "Shinjuku", "Romancecar normal. Desde Shinjuku, ~45 min más con transbordo."],
+      ["Tarde", "taxi", "Casa", "Yamato Higashiasakusa", "Dos taxis o uno grande, ~10 min."],
+      ["Noche", "taxi", "Casa", "Ootori-jinja", "Dos taxis, ~15 min."],
+      ["O en tren", "tobu", "Kanegafuchi", "Kita-Senju", "3 paradas."],
+      ["", "hibiya", "Kita-Senju", "Iriya", "3 paradas. El santuario, a ~7 min a pie."],
+      ["Opción", "ginza", "Asakusa", "Shibuya", "Para el club Harlem: directo, ~32 min."]
+    ],
+    10: [
+      ["Mañana", "tobu", "Kanegafuchi", "Hikifune", "2 paradas en tren local. Transbordo en el mismo andén."],
+      ["", "hanzomon", "Hikifune", "Omotesando", "Los trenes siguen por la línea Hanzomon, ~35 min."],
+      ["Opción A", "chiyoda", "Omotesando", "Meiji-jingumae", "1 parada, junto a la entrada de Meiji Jingu. O 15 min a pie."],
+      ["Mediodía", "walk", "Harajuku", "Shibuya", "Por Cat Street, ~20 min."],
+      ["Noche", "hanzomon", "Shibuya", "Hikifune", "~35 min. Allí, Tobu local 2 paradas hasta Kanegafuchi."]
+    ],
+    11: [
+      ["Mañana", "tobu", "Kanegafuchi", "Kita-Senju", "3 paradas."],
+      ["", "hibiya", "Kita-Senju", "Tsukiji", "Directo, ~30 min. El mercado exterior, a la salida."],
+      ["Mediodía", "hibiya", "Tsukiji", "Higashi-Ginza", "1 parada."],
+      ["", "asakusa", "Higashi-Ginza", "Asakusa", "7 paradas, ~15 min."],
+      ["Noche", "tobu", "Asakusa", "Kanegafuchi", "4 paradas, ~10 min."]
+    ],
+    12: [
+      ["Opción A", "tobu", "Kanegafuchi", "Kita-Senju", "3 paradas."],
+      ["", "chiyoda", "Kita-Senju", "Sendagi", "3 paradas. Yanaka Ginza, a ~5 min. Nezu es la parada siguiente."],
+      ["", "walk", "Nezu", "Ueno", "Por el parque de Ueno hasta Ameyoko, ~25 min."],
+      ["Tarde", "yamanote", "Ueno", "Akihabara", "2 paradas. O a pie por Ameyoko, ~15 min."],
+      ["Opción B", "hibiya", "Kita-Senju", "Akihabara", "6 paradas, ~15 min (antes, Tobu hasta Kita-Senju)."],
+      ["", "chuosobu", "Akihabara", "Nakano", "Directo, ~35 min. Vuelta igual."],
+      ["16:00", "chuosobu", "Akihabara", "Suidobashi", "2 paradas. Kodokan, Korakuen y Tokyo Dome City, a la salida."],
+      ["Noche", "chuosobu", "Suidobashi", "Akihabara", "2 paradas."],
+      ["", "hibiya", "Akihabara", "Kita-Senju", "6 paradas, y Tobu 3 paradas hasta Kanegafuchi. O dos taxis, ~20 min."]
+    ],
+    13: [
+      ["Mañana", "tobu", "Kanegafuchi", "Hikifune", "2 paradas."],
+      ["", "hanzomon", "Hikifune", "Kiyosumi-shirakawa", "~10 min."],
+      ["", "oedo", "Kiyosumi-shirakawa", "Tsukishima", "2 paradas."],
+      ["", "yurakucho", "Tsukishima", "Toyosu", "1 parada. teamLab, a ~10 min a pie. Atajo: dos taxis desde casa, ~25 min."],
+      ["Comida", "yurikamome", "Shin-Toyosu", "Shijo-mae", "1 parada."],
+      ["Tarde", "yurikamome", "Shijo-mae", "Toyosu", "2 paradas."],
+      ["", "yurakucho", "Toyosu", "Ginza-itchome", "3 paradas. El Kabukiza, a ~8 min a pie."],
+      ["Cena", "yurakucho", "Ginza-itchome", "Tsukishima", "2 paradas."],
+      ["", "oedo", "Tsukishima", "Shiodome", "3 paradas, junto a Shinbashi. Confirmad en la reserva el punto exacto del tour."],
+      ["Vuelta", "asakusa", "Shimbashi", "Asakusa", "8 paradas, ~20 min, y Tobu 4 paradas hasta Kanegafuchi (mirad el último tren). O dos taxis, ~30 min."]
+    ],
+    14: [
+      ["Primera hora", "tobu", "Kanegafuchi", "Asakusa", "4 paradas, ~10 min."],
+      ["", "tobunikko", "Asakusa", "Tobu-Nikko", "Expreso limitado Kegon o Spacia X, ~2 h, asiento reservado (se paga aparte)."],
+      ["", "bus", "Tobu-Nikko", "Shinkyo", "~5 min en bus, o 30 min a pie."],
+      ["Tarde", "tobunikko", "Tobu-Nikko", "Asakusa", "Vuelta hacia las 16:00."],
+      ["Opción Edomura", "tobunikko", "Asakusa", "Kinugawa-Onsen", "Expreso limitado, ~2 h. Desde allí, bus de ~15 min al parque."],
+      ["Opción Tokio pop", "hanzomon", "Hikifune", "Kudanshita", "~20 min (antes, Tobu 2 paradas hasta Hikifune)."],
+      ["", "shinjuku", "Kudanshita", "Shinjuku-sanchome", "3 paradas. La Ninja Trick House está a pocos minutos."],
+      ["", "yamanote", "Shinjuku", "Ikebukuro", "~10 min. Vuelta a casa: dos taxis, ~35 min."]
+    ],
+    15: [
+      ["Mañana", "taxi", "Casa", "Ryogoku", "Dos taxis con las maletas, ~15 min."],
+      ["17:00", "chuosobu", "Ryogoku", "Asakusabashi", "1 parada."],
+      ["", "asakusa", "Asakusabashi", "Haneda T3", "Coged un tren con destino 羽田空港 (Haneda Airport): sigue por la línea Keikyu hasta la terminal, ~45 min. Si no va directo, transbordo en Sengakuji, en el mismo andén."],
+      ["Opción Skytree", "asakusa", "Oshiage", "Haneda T3", "Mismo tren directo a 羽田空港, ~50 min."]
+    ]
+  };
 
   var GUSTOS = [
     { t: "Samuráis, ninjas y Japón tradicional", items: [
@@ -1487,6 +1706,28 @@ details ul { margin: 12px 0 0; padding-left: 1.1em; display: flex; flex-directio
       return '<div><dt>' + esc(r[0]) + '</dt><dd>' + fmt(r[1]) + '</dd></div>';
     }).join("") + '</dl>';
 
+    var legs = ROUTES[d.n] || [];
+    if (legs.length) {
+      var seen = {};
+      var chips = legs.filter(function (r) {
+        var L = LINES[r[1]];
+        if (!L.col || seen[r[1]]) return false;
+        seen[r[1]] = true;
+        return true;
+      });
+      html += '<details class="legs"><summary><span class="legs-t">Trayectos y líneas</span><span class="legs-chips" aria-hidden="true">' +
+        chips.map(function (r) { return lineBadge(r[1]); }).join("") + '</span></summary>' +
+        '<ol>' + legs.map(function (r) {
+          var L = LINES[r[1]];
+          return '<li class="leg">' + lineBadge(r[1]) +
+            '<div class="leg-body"><p class="leg-line">' + esc(L.n) + (r[0] ? '<span class="leg-w">' + esc(r[0]) + '</span>' : '') + '</p>' +
+            '<p class="leg-ab">' + esc(r[2]) + ' <span aria-label="a">→</span> ' + esc(r[3]) + '</p>' +
+            (r[4] ? '<p class="leg-n">' + fmt(r[4]) + '</p>' : '') + '</div></li>';
+        }).join("") + '</ol>' +
+        '<p class="leg-foot">Las letras y colores son los de los carteles de cada estación. Las horas son aproximadas: comprobad el andén en Google Maps.</p>' +
+      '</details>';
+    }
+
     html += '<ol class="timeline">' + d.blocks.map(function (b) {
       return '<li class="tl' + (b.k === "alt" ? ' alt' : '') + '">' +
         '<span class="tl-ico">' + (ICONS[b.k] || ICONS.morning) + '</span>' +
@@ -1506,6 +1747,11 @@ details ul { margin: 12px 0 0; padding-left: 1.1em; display: flex; flex-directio
     '</nav>';
 
     dayEl.innerHTML = html;
+  }
+
+  function lineBadge(k) {
+    var L = LINES[k];
+    return '<span class="lb' + (L.col ? '' : ' plain') + (L.c.length > 1 ? ' wide' : '') + '"' + (L.col ? ' style="--lc:' + L.col + '"' : '') + ' title="' + esc(L.n) + '"><b' + (/[^A-Z]/.test(L.c) ? ' lang="ja"' : '') + '>' + esc(L.c) + '</b></span>';
   }
 
   function select(i, opts) {
