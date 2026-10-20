@@ -76,6 +76,7 @@ La idea de diseño: **el viaje es una línea de tren**. Cada día es una parada,
 - **📍 Se abre sola en «hoy»** — durante el viaje detecta la fecha en hora de Japón y marca la parada con `HOY`.
 - **⏳ Cuenta atrás** — antes de salir muestra cuántos días faltan.
 - **🎫 Billete de logística** — por cada día: dónde dormimos, transporte, qué llevar y qué estaba reservado.
+- **🚇 Trayectos y líneas** — cada día, los metros, trenes y tranvías que hay que coger, con el código y el color de la línea como en los carteles, paradas y si entra en el pase.
 - **🕐 Línea del día** — mañana, mediodía, tarde y noche con iconos propios, más planes B y consejos.
 - **✅ Reservas pendientes** — una checklist que se guarda en el propio dispositivo.
 - **🏠 Direcciones para el taxi** — en japonés, con botón de **copiar** y enlace directo a Google Maps.
@@ -133,6 +134,7 @@ Todo el contenido vive en arrays al principio del `<script>`, así que editar el
 |---|---|
 | `CITY` | Nombre, código y colores de cada ciudad |
 | `DAYS` | Los 15 días: cartel, logística, bloques horarios y consejos |
+| `LINES` / `ROUTES` | Líneas (código y color) y trayectos de cada día |
 | `STAYS` | Alojamientos con dirección en japonés y búsqueda de Maps |
 | `SHIP` / `SHIPNOTES` | Envíos de maletas con Yamato |
 | `CHECKS` | Checklist de reservas pendientes |
@@ -185,6 +187,6 @@ La versión editable del contenido está en el documento [Japón 2026 · Guía d
 
 **いってきます!** 🍁
 
-<sub>Actualizado el 14 de octubre de 2026</sub>
+<sub>Actualizado el 20 de octubre de 2026</sub>
 
 </div>
